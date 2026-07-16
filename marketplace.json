@@ -1,0 +1,20 @@
+{
+  "name": "bwh-ai-workflow",
+  "interface": {
+    "displayName": "BWH AI Workflow"
+  },
+  "plugins": [
+    {
+      "name": "bwh-ai-workflow",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

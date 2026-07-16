@@ -63,6 +63,17 @@ project/
 
 The target project remains the authority for domain rules, schemas, permissions, validation, and release policy. This repository supplies reusable workflow behavior only.
 
+## Install as a Codex plugin
+
+Install this repository as a plugin marketplace, then install the workflow plugin:
+
+```bash
+codex plugin marketplace add simplybenuk/bwh-ai-workflow
+codex plugin add bwh-ai-workflow@bwh-ai-workflow
+```
+
+After installation, navigate to the target project and invoke `$bwh-adopt`. The skill resolves the pinned workflow source, installs or updates `.agents/skills` and `.agents/contracts`, preserves the project adapter, and records `.agents/bwh-ai-workflow.lock`.
+
 Each project should maintain an adapter and context map that point to its existing vision, architecture, ADRs, feature specs, schema, domain rules, planning artifacts, and runbooks. The workflow repository provides the loading contract and templates; it does not duplicate project documentation.
 
 ## Update an existing project
@@ -100,6 +111,7 @@ The human has two deliberate gates: read and approve the spec, then test the res
 
 Available skills:
 
+- `bwh-adopt` — install this workflow into a project or update an existing pinned installation.
 - `bwh-ideate` — turn an early idea into a bounded direction and discovery brief.
 - `bwh-spec` — create the decision-ready specification and its development-readiness artifacts.
 - `bwh-refine-spec` — repeatedly revise the spec and readiness artifacts until the human approves it.
