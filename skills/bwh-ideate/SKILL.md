@@ -5,7 +5,7 @@ description: Turn an early product or engineering idea into a bounded discovery 
 
 # Ideate
 
-Apply the shared contracts in `contracts/autonomy.md`, `contracts/collaboration.md`, `contracts/completion.md`, `contracts/handoff.md`, and `contracts/model-routing.md`.
+Apply the shared contracts in `../../contracts/autonomy.md`, `../../contracts/collaboration.md`, `../../contracts/completion.md`, `../../contracts/handoff.md`, and `../../contracts/model-routing.md`.
 
 ## Goal
 

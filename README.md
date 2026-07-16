@@ -13,6 +13,80 @@ The core stays model-agnostic. Projects supply their own source-of-truth files, 
 
 Shared contracts also define collaboration style, model-routing measurement, and persisted workflow states. Skills reference these contracts rather than duplicating them.
 
+## Add to a project
+
+The workflow repository is a source package, not a runtime dependency. Install a pinned copy of the skills and contracts into the target repository, then add a small project adapter.
+
+From the target project root:
+
+```bash
+mkdir -p .agents/skills .agents/contracts
+git clone https://github.com/simplybenuk/bwh-ai-workflow.git /tmp/bwh-ai-workflow
+git -C /tmp/bwh-ai-workflow checkout <commit-or-tag>
+cp -R /tmp/bwh-ai-workflow/skills/bwh-* .agents/skills/
+cp -R /tmp/bwh-ai-workflow/contracts/. .agents/contracts/
+```
+
+Record the installed source and revision in a project-local lock note, for example `.agents/bwh-ai-workflow.lock`:
+
+```text
+source: https://github.com/simplybenuk/bwh-ai-workflow.git
+revision: <commit-sha-or-tag>
+installed_at: <yyyy-mm-dd>
+```
+
+Then create the project adapter. It should document the project's source-of-truth paths, task/PRD schema, validation commands, security and tenancy rules, branch/commit policy, available tools, and human output-testing checklist. Do not replace the project's `AGENTS.md` with the generic workflow repository.
+
+For a project using the conventional Codex layout, the result should look like:
+
+```text
+project/
+  .agents/
+    skills/
+      bwh-agent-review/
+      bwh-development/
+      bwh-ideate/
+      bwh-refine-spec/
+      bwh-spec/
+    contracts/
+      autonomy.md
+      collaboration.md
+      completion.md
+      handoff.md
+      model-routing.md
+      states.md
+    bwh-ai-workflow.lock
+  adapters/ or docs/agents/
+    bwh-ai-workflow.md
+```
+
+The target project remains the authority for domain rules, schemas, permissions, validation, and release policy. This repository supplies reusable workflow behavior only.
+
+## Update an existing project
+
+Update in a temporary checkout first and compare the installed revision with the lock note:
+
+```bash
+rm -rf /tmp/bwh-ai-workflow-update
+git clone https://github.com/simplybenuk/bwh-ai-workflow.git /tmp/bwh-ai-workflow-update
+git -C /tmp/bwh-ai-workflow-update checkout <new-commit-or-tag>
+diff -ru .agents/skills /tmp/bwh-ai-workflow-update/skills
+diff -ru .agents/contracts /tmp/bwh-ai-workflow-update/contracts
+```
+
+Before applying an update:
+
+1. Read the workflow changelog or commit diff.
+2. Run the project's representative workflow evals against the current installation.
+3. Review changes to skill triggers, output headings, states, stop rules, and contracts.
+4. Preserve or update the project adapter where local tools, paths, or validation changed.
+5. Copy the new pinned skills and contracts, then update `.agents/bwh-ai-workflow.lock`.
+6. Run the project's relevant checks and one end-to-end workflow smoke test.
+
+Do not overwrite project-specific adapters, `AGENTS.md`, source-of-truth documents, PRD files, or local customisations without reviewing the diff. If the update regresses an eval, restore the previous pinned revision and record the failure before trying another prompt change.
+
+The recommended migration loop is: change one skill, contract, model, reasoning setting, or tool-routing rule at a time; run the same eval cases; compare correctness, completeness, tokens, latency, tool calls, retries, and cost; then keep the change only if quality remains acceptable.
+
 ## Workflow
 
 ```text
