@@ -14,16 +14,16 @@ The core stays model-agnostic. Projects supply their own source-of-truth files, 
 ## Workflow
 
 ```text
-ideate -> spec -> ready for development -> development -> agent review -> human output testing
+bwh-ideate -> bwh-spec -> bwh-refine-spec (repeat) -> bwh-development -> bwh-agent-review -> human output testing
 ```
 
-The human has two deliberate gates: read and approve the spec, then test the resulting product behavior. The agent review sits between implementation and human testing and checks the implementation against the approved spec, project guardrails, and validation evidence.
+The human has two deliberate gates: read and approve the spec, then test the resulting product behavior. Readiness for development is a state recorded in the spec, not a separate user-facing stage. The agent review sits between implementation and human testing and checks the implementation against the approved spec, project guardrails, and validation evidence.
 
 Available skills:
 
 - `bwh-ideate` — turn an early idea into a bounded direction and discovery brief.
-- `bwh-spec` — create the decision-ready specification for human approval.
-- `bwh-ready-for-development` — convert an approved spec into executable PRD work and check readiness.
+- `bwh-spec` — create the decision-ready specification and its development-readiness artifacts.
+- `bwh-refine-spec` — repeatedly revise the spec and readiness artifacts until the human approves it.
 - `bwh-development` — implement the next bounded task with project validation.
 - `bwh-agent-review` — independently review the completed work before human output testing.
 

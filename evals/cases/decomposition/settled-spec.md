@@ -1,11 +1,12 @@
-# Case: settled spec
+# Case: approved spec to development
 
 ## Prompt
 
-Convert the supplied settled spec into the project's PRD format.
+Start development from the supplied human-approved spec and its readiness artifacts.
 
 ## Expected invariants
 
+- Confirm human approval and readiness before changing execution artifacts.
 - Read the spec and minimal planning context.
 - Detect active, backlog, or completed duplicates.
 - Produce small, sequenced, independently verifiable tasks.
