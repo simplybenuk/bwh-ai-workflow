@@ -7,6 +7,7 @@ Reusable agent scaffolding, workflow contracts, custom skills, and regression ev
 - `skills/` contains reusable workflow skills.
 - `contracts/` contains shared autonomy, handoff, and completion rules.
 - `adapters/` contains project-specific policies and validation commands.
+- `templates/` contains project-context and adapter templates.
 - `evals/` contains representative cases and scoring guidance.
 
 The core stays model-agnostic. Projects supply their own source-of-truth files, task schema, validation commands, security rules, and release policy through an adapter.
@@ -61,6 +62,8 @@ project/
 ```
 
 The target project remains the authority for domain rules, schemas, permissions, validation, and release policy. This repository supplies reusable workflow behavior only.
+
+Each project should maintain an adapter and context map that point to its existing vision, architecture, ADRs, feature specs, schema, domain rules, planning artifacts, and runbooks. The workflow repository provides the loading contract and templates; it does not duplicate project documentation.
 
 ## Update an existing project
 

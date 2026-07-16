@@ -5,7 +5,7 @@ description: Independently review completed implementation against the approved 
 
 # Agent Review
 
-Apply the shared contracts in `../../contracts/autonomy.md`, `../../contracts/collaboration.md`, `../../contracts/completion.md`, `../../contracts/handoff.md`, `../../contracts/model-routing.md`, and `../../contracts/states.md`, plus the consuming project's adapter.
+Apply the shared contracts in `../../contracts/autonomy.md`, `../../contracts/collaboration.md`, `../../contracts/completion.md`, `../../contracts/context-loading.md`, `../../contracts/handoff.md`, `../../contracts/model-routing.md`, and `../../contracts/states.md`, plus the consuming project's adapter.
 
 ## Goal
 
@@ -45,3 +45,6 @@ Return exactly these headings:
 - `residual_risks`
 - `human_test_focus`
 - `next_handoff`
+- `context_files_read`
+- `source_of_truth_decisions`
+- `conflicts_found`

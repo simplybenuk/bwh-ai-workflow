@@ -5,7 +5,7 @@ description: Iteratively refine a draft specification and its development-readin
 
 # Refine Spec
 
-Apply the shared contracts in `../../contracts/autonomy.md`, `../../contracts/collaboration.md`, `../../contracts/completion.md`, `../../contracts/handoff.md`, `../../contracts/model-routing.md`, and `../../contracts/states.md`.
+Apply the shared contracts in `../../contracts/autonomy.md`, `../../contracts/collaboration.md`, `../../contracts/completion.md`, `../../contracts/context-loading.md`, `../../contracts/handoff.md`, `../../contracts/model-routing.md`, and `../../contracts/states.md`.
 
 ## Goal
 
@@ -43,3 +43,6 @@ Return exactly these headings:
 - `remaining_questions`
 - `readiness_check`
 - `recommended_next_action`
+- `context_files_read`
+- `source_of_truth_decisions`
+- `conflicts_found`

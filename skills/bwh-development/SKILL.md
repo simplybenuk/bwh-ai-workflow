@@ -5,7 +5,7 @@ description: Execute bounded PRD tasks in a project repository with focused chan
 
 # Development
 
-Apply the shared contracts in `../../contracts/autonomy.md`, `../../contracts/collaboration.md`, `../../contracts/completion.md`, `../../contracts/handoff.md`, `../../contracts/model-routing.md`, and `../../contracts/states.md`, plus the consuming project's adapter.
+Apply the shared contracts in `../../contracts/autonomy.md`, `../../contracts/collaboration.md`, `../../contracts/completion.md`, `../../contracts/context-loading.md`, `../../contracts/handoff.md`, `../../contracts/model-routing.md`, and `../../contracts/states.md`, plus the consuming project's adapter.
 
 ## Goal
 
@@ -46,3 +46,6 @@ Return exactly these headings:
 - `commit_status`
 - `next_priority`
 - `next_handoff`
+- `context_files_read`
+- `source_of_truth_decisions`
+- `conflicts_found`

@@ -5,7 +5,7 @@ description: Turn a rough product or engineering idea into a bounded specificati
 
 # Spec
 
-Apply the shared contracts in `../../contracts/autonomy.md`, `../../contracts/collaboration.md`, `../../contracts/completion.md`, `../../contracts/handoff.md`, `../../contracts/model-routing.md`, and `../../contracts/states.md`.
+Apply the shared contracts in `../../contracts/autonomy.md`, `../../contracts/collaboration.md`, `../../contracts/completion.md`, `../../contracts/context-loading.md`, `../../contracts/handoff.md`, `../../contracts/model-routing.md`, and `../../contracts/states.md`.
 
 ## Goal
 
@@ -46,3 +46,6 @@ Return exactly these headings:
 - `task_outline`
 - `validation_plan`
 - `recommended_next_step`
+- `context_files_read`
+- `source_of_truth_decisions`
+- `conflicts_found`
