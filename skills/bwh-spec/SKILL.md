@@ -17,7 +17,7 @@ Produce a decision-ready spec that another agent can translate into independentl
 4. Define goals, non-goals, requirements, proposed design, risks, security, rollout, tests, acceptance criteria, decisions, and material open questions.
 5. Review task readiness before handing off.
 
-Use the consuming project's spec conventions. Keep the spec model-agnostic and proportional to the work.
+Use the consuming project's spec conventions. Keep the spec model-agnostic and proportional to the work. This is the human approval gate before development planning.
 
 ## Stop conditions
 
@@ -25,4 +25,4 @@ Stop for user input when a missing decision would materially change product dire
 
 ## Handoff
 
-Return the spec path or artifact, confirmed decisions, assumptions, open questions, and recommended next step. Do not edit execution plans unless explicitly requested.
+Return the spec path or artifact, confirmed decisions, assumptions, open questions, and recommended next step: human spec approval, then `bwh-ready-for-development`. Do not edit execution plans unless explicitly requested.
