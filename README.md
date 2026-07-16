@@ -16,9 +16,36 @@ Shared contracts also define collaboration style, model-routing measurement, and
 
 ## Add to a project
 
-The workflow repository is a source package, not a runtime dependency. Install a pinned copy of the skills and contracts into the target repository, then add a small project adapter.
+The recommended path is to install the repository as a Codex plugin, then run the adopter skill from the target project.
 
-From the target project root:
+### Recommended: install the Codex plugin
+
+The repository must be public or available through your Git credentials. Run these commands once:
+
+```bash
+codex plugin marketplace add simplybenuk/bwh-ai-workflow
+codex plugin add bwh-ai-workflow@bwh-ai-workflow
+```
+
+Then navigate to the project that should receive the workflow:
+
+```bash
+cd /path/to/target-project
+```
+
+Start Codex in that project and invoke:
+
+```text
+$bwh-adopt
+```
+
+The skill detects whether the workflow is absent or already installed. It adds or updates `.agents/skills` and `.agents/contracts`, preserves `AGENTS.md` and project-specific adapters, creates or updates `.agents/bwh-ai-workflow.lock`, and runs the project’s relevant validation and workflow smoke test.
+
+The target project remains authoritative for domain rules, schemas, permissions, validation, and release policy. Review any adapter placeholders or update conflicts reported by the skill before continuing.
+
+### Manual pinned installation
+
+For environments where the plugin cannot be installed, the workflow can still be copied as a pinned source package. From the target project root:
 
 ```bash
 mkdir -p .agents/skills .agents/contracts
@@ -62,17 +89,6 @@ project/
 ```
 
 The target project remains the authority for domain rules, schemas, permissions, validation, and release policy. This repository supplies reusable workflow behavior only.
-
-## Install as a Codex plugin
-
-Install this repository as a plugin marketplace, then install the workflow plugin:
-
-```bash
-codex plugin marketplace add simplybenuk/bwh-ai-workflow
-codex plugin add bwh-ai-workflow@bwh-ai-workflow
-```
-
-After installation, navigate to the target project and invoke `$bwh-adopt`. The skill resolves the pinned workflow source, installs or updates `.agents/skills` and `.agents/contracts`, preserves the project adapter, and records `.agents/bwh-ai-workflow.lock`.
 
 Each project should maintain an adapter and context map that point to its existing vision, architecture, ADRs, feature specs, schema, domain rules, planning artifacts, and runbooks. The workflow repository provides the loading contract and templates; it does not duplicate project documentation.
 
