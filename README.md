@@ -11,6 +11,8 @@ Reusable agent scaffolding, workflow contracts, custom skills, and regression ev
 
 The core stays model-agnostic. Projects supply their own source-of-truth files, task schema, validation commands, security rules, and release policy through an adapter.
 
+Shared contracts also define collaboration style, model-routing measurement, and persisted workflow states. Skills reference these contracts rather than duplicating them.
+
 ## Workflow
 
 ```text

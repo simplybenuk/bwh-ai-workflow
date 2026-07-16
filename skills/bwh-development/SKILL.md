@@ -5,6 +5,8 @@ description: Execute bounded PRD tasks in a project repository with focused chan
 
 # Development
 
+Apply the shared contracts in `contracts/autonomy.md`, `contracts/collaboration.md`, `contracts/completion.md`, `contracts/handoff.md`, `contracts/model-routing.md`, and `contracts/states.md`, plus the consuming project's adapter.
+
 ## Goal
 
 Implement the requested task or authorised run count while preserving the approved spec, project scope, security, and source-of-truth rules.
@@ -29,3 +31,18 @@ Stop on a material blocker, failed required validation that cannot be safely res
 ## Handoff
 
 Report the approval and readiness evidence, changes, decisions, assumptions, files, tests, validation results, planning status, commit status, and the next priority. Explicitly state that the next handoff is `bwh-agent-review`.
+
+## Output
+
+Return exactly these headings:
+
+- `approval_and_readiness_evidence`
+- `task_completed`
+- `changes`
+- `decisions_and_assumptions`
+- `files_changed`
+- `validation_evidence`
+- `planning_status`
+- `commit_status`
+- `next_priority`
+- `next_handoff`

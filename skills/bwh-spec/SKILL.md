@@ -5,6 +5,8 @@ description: Turn a rough product or engineering idea into a bounded specificati
 
 # Spec
 
+Apply the shared contracts in `contracts/autonomy.md`, `contracts/collaboration.md`, `contracts/completion.md`, `contracts/handoff.md`, `contracts/model-routing.md`, and `contracts/states.md`.
+
 ## Goal
 
 Produce a decision-ready spec and a readiness bundle that another agent can translate into independently verifiable implementation tasks after human approval.
@@ -26,3 +28,21 @@ Stop for user input when a missing decision would materially change product dire
 ## Handoff
 
 Return the spec path or artifact, readiness status, confirmed decisions, assumptions, open questions, proposed task outline, and recommended next step: human spec approval or `bwh-refine-spec`. Do not edit execution plans unless explicitly requested.
+
+## Output
+
+Return exactly these headings:
+
+- `artifact_path`
+- `status`
+- `problem_and_outcome`
+- `actors`
+- `goals_and_non_goals`
+- `requirements`
+- `design_and_constraints`
+- `decisions`
+- `assumptions`
+- `open_questions`
+- `task_outline`
+- `validation_plan`
+- `recommended_next_step`

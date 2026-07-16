@@ -5,6 +5,8 @@ description: Iteratively refine a draft specification and its development-readin
 
 # Refine Spec
 
+Apply the shared contracts in `contracts/autonomy.md`, `contracts/collaboration.md`, `contracts/completion.md`, `contracts/handoff.md`, `contracts/model-routing.md`, and `contracts/states.md`.
+
 ## Goal
 
 Improve an existing spec without silently changing its intent, until the human can approve it and development can begin without inventing scope.
@@ -27,3 +29,17 @@ Stop for human input when feedback conflicts with a confirmed decision, a materi
 ## Handoff
 
 Return the changed sections, decisions preserved or changed, remaining questions, readiness status, and the next action: human approval, another refinement pass, or `bwh-development` after the status becomes `APPROVED FOR DEVELOPMENT`.
+
+## Output
+
+Return exactly these headings:
+
+- `artifact_path`
+- `status`
+- `changed_sections`
+- `decisions_preserved`
+- `decisions_changed`
+- `assumptions`
+- `remaining_questions`
+- `readiness_check`
+- `recommended_next_action`

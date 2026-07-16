@@ -11,3 +11,7 @@ Review the completed implementation against the approved spec before the user te
 - Identify missing states, permission or tenancy risks, regressions, and unsupported claims.
 - Classify findings and stop human testing when a blocking defect exists.
 - Do not silently broaden scope or rewrite unrelated code.
+
+## Expected output headings
+
+`verdict`, `blocking_findings`, `should_fix_findings`, `informational_findings`, `validation_evidence`, `residual_risks`, `human_test_focus`, `next_handoff`

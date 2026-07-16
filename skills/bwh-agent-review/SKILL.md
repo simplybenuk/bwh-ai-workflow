@@ -5,6 +5,8 @@ description: Independently review completed implementation against the approved 
 
 # Agent Review
 
+Apply the shared contracts in `contracts/autonomy.md`, `contracts/collaboration.md`, `contracts/completion.md`, `contracts/handoff.md`, `contracts/model-routing.md`, and `contracts/states.md`, plus the consuming project's adapter.
+
 ## Goal
 
 Find material defects, omissions, regressions, security risks, and validation gaps before the human tests the product output.
@@ -30,3 +32,16 @@ Stop and return the work to `bwh-development` when a blocking finding exists, re
 ## Handoff
 
 Return a concise review verdict, findings with file or test evidence, validation performed, residual risks, and the human output-testing focus. The final handoff should explicitly say either `READY FOR HUMAN TESTING` or `NOT READY FOR HUMAN TESTING`.
+
+## Output
+
+Return exactly these headings:
+
+- `verdict`
+- `blocking_findings`
+- `should_fix_findings`
+- `informational_findings`
+- `validation_evidence`
+- `residual_risks`
+- `human_test_focus`
+- `next_handoff`

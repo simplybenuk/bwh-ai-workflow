@@ -5,6 +5,8 @@ description: Turn an early product or engineering idea into a bounded discovery 
 
 # Ideate
 
+Apply the shared contracts in `contracts/autonomy.md`, `contracts/collaboration.md`, `contracts/completion.md`, `contracts/handoff.md`, and `contracts/model-routing.md`.
+
 ## Goal
 
 Create enough shared understanding to begin a useful specification without prematurely designing or implementing the solution.
@@ -26,3 +28,15 @@ Stop before proposing a direction when the problem, primary actor, or desired ou
 ## Handoff
 
 Return the discovery brief, decisions needed, assumptions, non-goals, and the recommended next step: `bwh-spec`.
+
+## Output
+
+Return exactly these headings:
+
+- `discovery_brief`
+- `known_facts`
+- `assumptions`
+- `decisions_needed`
+- `scope_and_non_goals`
+- `risks_and_dependencies`
+- `recommended_next_step`

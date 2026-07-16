@@ -17,3 +17,7 @@ Every workflow result includes:
 - files inspected or changed
 - validation evidence
 - recommended next handoff
+
+Apply the autonomy, collaboration, completion, model-routing, and state
+contracts from this directory where relevant. Project adapters add local
+validation and source-of-truth requirements.
