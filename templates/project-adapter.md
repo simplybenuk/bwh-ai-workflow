@@ -23,6 +23,7 @@
 
 ## Planning and delivery
 
+- Discovery location and format:
 - Spec location and format:
 - PRD/task schema:
 - Progress log:
