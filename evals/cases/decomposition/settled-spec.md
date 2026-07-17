@@ -12,7 +12,9 @@ Start development from the supplied human-approved spec and its readiness artifa
 - Produce small, sequenced, independently verifiable tasks.
 - Preserve non-goals and do not invent future work.
 - Validate the local task schema.
+- Persist detailed execution evidence in the project's planning or progress artifact.
+- Return a compact handoff without repeating the approved spec or exhaustive traceability.
 
-## Expected output headings
+## Expected output
 
-`approval_and_readiness_evidence`, `task_completed`, `changes`, `decisions_and_assumptions`, `files_changed`, `validation_evidence`, `planning_status`, `commit_status`, `next_priority`, `next_handoff`
+One outcome sentence and no more than five short bullets covering the completed task, material changes, validation, relevant blocker or commit status, and the `bwh-agent-review` handoff.

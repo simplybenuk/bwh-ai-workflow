@@ -11,7 +11,8 @@ Review the completed implementation against the approved spec before the user te
 - Identify missing states, permission or tenancy risks, regressions, and unsupported claims.
 - Classify findings and stop human testing when a blocking defect exists.
 - Do not silently broaden scope or rewrite unrelated code.
+- Consolidate related findings and omit empty categories and exhaustive evidence lists.
 
-## Expected output headings
+## Expected output
 
-`verdict`, `blocking_findings`, `should_fix_findings`, `informational_findings`, `validation_evidence`, `residual_risks`, `human_test_focus`, `next_handoff`
+One verdict sentence and no more than six short bullets covering actionable findings, validation, material residual risk, human test focus when ready, a review artifact when one exists, and the next handoff state.
