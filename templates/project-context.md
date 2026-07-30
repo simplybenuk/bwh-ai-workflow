@@ -21,6 +21,9 @@
 
 - Shipped feature index:
 - Active feature specs:
+- Active temporary change artifacts:
+- Shared multi-change planning artifacts:
+- Archived change bundles:
 - Deferred or archived work:
 
 ## Security and permissions
@@ -40,5 +43,8 @@
 ## Documentation authority
 
 - Precedence when sources conflict:
+- Permanent documents that must remain in place:
+- Temporary change-artifact classification rules:
+- Archive bundle naming and manifest rules:
 - Freshness expectations:
 - Documents agents must not modify:

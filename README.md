@@ -63,7 +63,7 @@ revision: <commit-sha-or-tag>
 installed_at: <yyyy-mm-dd>
 ```
 
-Then create the project adapter. It should document the project's source-of-truth paths, task/PRD schema, validation commands, security and tenancy rules, branch/commit policy, available tools, and human output-testing checklist. Do not replace the project's `AGENTS.md` with the generic workflow repository.
+Then create the project adapter. It should document the project's source-of-truth paths, task/PRD schema, validation commands, security and tenancy rules, branch/commit policy, available tools, human output-testing checklist, temporary change-artifact classes, and completed-change archive conventions. Do not replace the project's `AGENTS.md` with the generic workflow repository.
 
 For a project using the conventional Codex layout, the result should look like:
 
@@ -72,6 +72,7 @@ project/
   .agents/
     skills/
       bwh-agent-review/
+      bwh-archive-change/
       bwh-development/
       bwh-ideate/
       bwh-refine-spec/
@@ -120,18 +121,19 @@ The recommended migration loop is: change one skill, contract, model, reasoning 
 ## Workflow
 
 ```text
-bwh-ideate -> bwh-spec -> bwh-refine-spec (repeat) -> bwh-development -> bwh-agent-review -> human output testing
+bwh-ideate -> bwh-spec -> bwh-refine-spec (repeat) -> bwh-development -> bwh-agent-review -> human output testing -> bwh-archive-change
 ```
 
-The human has two deliberate gates: read and approve the spec, then test the resulting product behavior. Readiness for development is a state recorded in the spec, not a separate user-facing stage. The agent review sits between implementation and human testing and checks the implementation against the approved spec, project guardrails, and validation evidence.
+The human has two deliberate gates: read and approve the spec, then test and accept the resulting product behavior. Readiness for development is a state recorded in the spec, not a separate user-facing stage. The agent review sits between implementation and human testing and checks the implementation against the approved spec, project guardrails, and validation evidence. After explicit human acceptance, the archive stage gathers the change's temporary workflow documentation into a verified bundle and leaves shared or permanent source-of-truth documents in place.
 
 Available skills:
 
 - `bwh-adopt` — install this workflow into a project or update an existing pinned installation.
+- `bwh-archive-change` — archive an accepted change and its temporary workflow documentation into a verified bundle.
 - `bwh-ideate` — turn an early idea into a bounded direction and discovery brief.
 - `bwh-spec` — create the decision-ready specification and its development-readiness artifacts.
 - `bwh-refine-spec` — repeatedly revise the spec and readiness artifacts until the human approves it.
 - `bwh-development` — implement the next bounded task with project validation.
 - `bwh-agent-review` — independently review the completed work before human output testing.
 
-The agent review is conditional in depth, but should be used for every substantive implementation task. The review must not silently become a second implementation pass; it reports findings and requests targeted fixes when needed.
+The agent review is conditional in depth, but should be used for every substantive implementation task. The review must not silently become a second implementation pass; it reports findings and requests targeted fixes when needed. Archival must not infer human acceptance from that review or from automated validation.

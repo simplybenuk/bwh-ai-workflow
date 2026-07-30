@@ -31,7 +31,7 @@ Stop and return the work to `bwh-development` when a blocking finding exists, re
 
 ## Handoff
 
-Return a concise review verdict, findings with file or test evidence, validation performed, residual risks, and the human output-testing focus. The final handoff should explicitly say either `READY FOR HUMAN TESTING` or `NOT READY FOR HUMAN TESTING`.
+Return a concise review verdict, findings with file or test evidence, validation performed, residual risks, and the human output-testing focus. The final handoff should explicitly say either `READY FOR HUMAN TESTING` or `NOT READY FOR HUMAN TESTING`. When ready, state that successful human output testing hands the accepted change to `bwh-archive-change`; when human testing finds more work, return it to `bwh-development`.
 
 Do not reproduce the spec, implementation summary, full validation logs, or exhaustive inspected-file lists. Consolidate related findings and include only evidence needed to understand or act on the verdict. When the project defines a review or progress artifact, persist detailed evidence there and link it.
 
@@ -44,4 +44,4 @@ Use one verdict sentence followed by at most six short bullets covering:
 - material residual risk
 - human test focus when ready
 - review artifact when one exists
-- next handoff state
+- next handoff state and post-testing route

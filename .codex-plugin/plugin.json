@@ -11,7 +11,7 @@
   "interface": {
     "displayName": "BWH AI Workflow",
     "shortDescription": "Spec-driven delivery workflow for Codex.",
-    "longDescription": "Adds reusable ideation, specification, refinement, development, review, and workflow-adoption skills for project repositories.",
+    "longDescription": "Adds reusable ideation, specification, refinement, development, review, archival, and workflow-adoption skills for project repositories.",
     "developerName": "Simply Ben",
     "category": "Developer Tools",
     "capabilities": ["Interactive", "Write"],

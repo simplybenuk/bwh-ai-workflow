@@ -26,7 +26,7 @@ Use the requested commit, tag, or branch when specified. Otherwise pin the resol
 1. Confirm the target is a project root and inspect `AGENTS.md`, `.agents/`, and any project adapter/context files.
 2. Create `.agents/skills` and `.agents/contracts` if absent.
 3. Copy every source `skills/bwh-*` directory into `.agents/skills/` and copy the contents of source `contracts/` into `.agents/contracts/`. Do not replace `AGENTS.md` or project documentation.
-4. If no adapter exists, create one from `templates/project-adapter.md` at the project’s documented adapter location. If no context map exists, create or adapt one from `templates/project-context.md`. Fill in project-specific values only when supported by repository evidence; otherwise leave explicit placeholders and report them.
+4. If no adapter exists, create one from `templates/project-adapter.md` at the project’s documented adapter location. If no context map exists, create or adapt one from `templates/project-context.md`. Include the template fields for active temporary artifacts, completed change archive bundles, artifact classification, shared-reference updates, and archive manifests. Fill in project-specific values only when supported by repository evidence; otherwise leave explicit placeholders and report them.
 5. Write `.agents/bwh-ai-workflow.lock` with the source URL/path, resolved revision, install date, and installed directories. A minimal format is:
 
    ```text
@@ -37,14 +37,14 @@ Use the requested commit, tag, or branch when specified. Otherwise pin the resol
    ```
 
    Do not overwrite an existing lock during a new install without inspecting it first.
-6. Validate that all installed skills have valid frontmatter, all referenced shared contracts exist, and the adapter names the required validation and source-of-truth locations.
+6. Validate that all installed skills have valid frontmatter, all referenced shared contracts exist, and the adapter names the required validation, source-of-truth, active-artifact, archive, classification, manifest, and shared-reference locations or rules.
 
 ## Update an existing workflow
 
 1. Read `.agents/bwh-ai-workflow.lock` and resolve the current installed revision. Compare it with the requested source revision.
 2. Inspect the source diff for changes to skill triggers, output headings, stop conditions, contracts, and state names. Summarise material changes before applying them.
 3. Compare source and target with a temporary checkout or `diff -ru`. Identify target files that differ from the installed revision. Treat differences in `.agents/skills/bwh-*` and `.agents/contracts/` as possible local customisations, not permission to overwrite blindly.
-4. Preserve project adapters, `AGENTS.md`, source-of-truth documents, PRDs, and unrelated local files. If a managed file has local edits, show the conflict and ask whether to replace, merge, or skip it when the choice could lose project intent.
+4. Preserve project adapters, context maps, `AGENTS.md`, source-of-truth documents, PRDs, completed change artifacts, and unrelated local files. If an existing adapter lacks the current archive, classification, manifest, or shared-reference settings, report the missing fields as migration actions; do not invent values or rewrite the adapter silently. If a managed file has local edits, show the conflict and ask whether to replace, merge, or skip it when the choice could lose project intent.
 5. Apply the approved source changes. Remove stale managed files only when the diff proves they were removed upstream and they have no local edits; otherwise leave them and report them.
 6. Update the lock file only after the copy succeeds, then run the project’s relevant checks and one representative end-to-end workflow smoke test.
 
@@ -53,5 +53,6 @@ Use the requested commit, tag, or branch when specified. Otherwise pin the resol
 - Do not run destructive cleanup such as recursive deletion or reset commands.
 - Do not commit, push, publish, or open a pull request unless separately requested.
 - Do not invent adapter values, validation commands, permissions, or domain rules.
+- Do not archive or move existing completed change documentation during installation or update.
 - If the source cannot be resolved, the target has conflicting local edits, or required project checks are unknown, stop with the exact blocker and the smallest safe next action.
 - A successful handoff states whether this was an install or update, source and pinned revision, directories changed, adapter/context status, conflicts preserved or resolved, validation evidence, smoke-test result, and remaining actions.
