@@ -10,67 +10,82 @@ Reusable agent scaffolding, workflow contracts, custom skills, and regression ev
 - `templates/` contains project-context and adapter templates.
 - `evals/` contains representative cases and scoring guidance.
 
-The core stays model-agnostic. Projects supply their own source-of-truth files, task schema, validation commands, security rules, and release policy through an adapter.
+The core stays model- and agent-agnostic. Projects supply their own source-of-truth files, task schema, validation commands, security rules, and release policy through an adapter.
 
-Shared contracts also define collaboration style, model-routing measurement, and persisted workflow states. Skills reference these contracts rather than duplicating them.
+Shared contracts also define collaboration style, model-routing measurement, persisted workflow states, and the per-host packaging conventions. Skills reference these contracts rather than duplicating them.
+
+## Agent hosts
+
+The skills and contracts contain no agent-specific behaviour. Only packaging and install layout differ, as defined in `contracts/host-conventions.md`:
+
+| Host | Agent home | Instruction file | Plugin manifest | Skill invocation |
+| --- | --- | --- | --- | --- |
+| Claude Code | `.claude/` | `CLAUDE.md` | `.claude-plugin/plugin.json` | `/bwh-<skill>` |
+| Codex | `.agents/` | `AGENTS.md` | `.codex-plugin/plugin.json` | `$bwh-<skill>` |
+
+Both manifests ship in this repository, so the same checkout installs as either plugin. A project may host both agents at once; `bwh-adopt` treats each as a separate install target with its own lock file.
 
 ## Add to a project
 
-The recommended path is to install the repository as a Codex plugin, then run the adopter skill from the target project.
+The recommended path is to install the repository as a plugin for your agent, then run the adopter skill from the target project. The repository must be public or available through your Git credentials.
 
-### Recommended: install the Codex plugin
+### Claude Code
 
-The repository must be public or available through your Git credentials. Run these commands once:
+```bash
+claude plugin marketplace add simplybenuk/bwh-ai-workflow
+claude plugin install bwh-ai-workflow@bwh-ai-workflow
+```
+
+Then start Claude Code in the target project and invoke `/bwh-adopt`.
+
+### Codex
 
 ```bash
 codex plugin marketplace add simplybenuk/bwh-ai-workflow
 codex plugin add bwh-ai-workflow@bwh-ai-workflow
 ```
 
-Then navigate to the project that should receive the workflow:
+Then start Codex in the target project and invoke `$bwh-adopt`.
 
-```bash
-cd /path/to/target-project
-```
+### What the adopter does
 
-Start Codex in that project and invoke:
-
-```text
-$bwh-adopt
-```
-
-The skill detects whether the workflow is absent or already installed. It adds or updates `.agents/skills` and `.agents/contracts`, preserves `AGENTS.md` and project-specific adapters, creates or updates `.agents/bwh-ai-workflow.lock`, and runs the project’s relevant validation and workflow smoke test.
+The skill resolves the agent host, then detects whether the workflow is absent or already installed. It adds or updates `<agent-home>/skills` and `<agent-home>/contracts`, preserves the project's agent instruction file and project-specific adapters, creates or updates `<agent-home>/bwh-ai-workflow.lock`, and runs the project’s relevant validation and workflow smoke test.
 
 The target project remains authoritative for domain rules, schemas, permissions, validation, and release policy. Review any adapter placeholders or update conflicts reported by the skill before continuing.
 
 ### Manual pinned installation
 
-For environments where the plugin cannot be installed, the workflow can still be copied as a pinned source package. From the target project root:
+For environments where the plugin cannot be installed, the workflow can still be copied as a pinned source package. From the target project root, with `AGENT_HOME` set to your host's agent home (`.claude` or `.agents`):
 
 ```bash
-mkdir -p .agents/skills .agents/contracts
+AGENT_HOME=.claude   # or .agents for Codex
+mkdir -p "$AGENT_HOME/skills" "$AGENT_HOME/contracts"
 git clone https://github.com/simplybenuk/bwh-ai-workflow.git /tmp/bwh-ai-workflow
 git -C /tmp/bwh-ai-workflow checkout <commit-or-tag>
-cp -R /tmp/bwh-ai-workflow/skills/bwh-* .agents/skills/
-cp -R /tmp/bwh-ai-workflow/contracts/. .agents/contracts/
+cp -R /tmp/bwh-ai-workflow/skills/bwh-* "$AGENT_HOME/skills/"
+cp -R /tmp/bwh-ai-workflow/contracts/. "$AGENT_HOME/contracts/"
 ```
 
-Record the installed source and revision in a project-local lock note, for example `.agents/bwh-ai-workflow.lock`:
+Contracts must stay a sibling of `skills/`, because each skill references them as `../../contracts/<name>.md`.
+
+Record the installed source and revision in a project-local lock note at `<agent-home>/bwh-ai-workflow.lock`:
 
 ```text
 source: https://github.com/simplybenuk/bwh-ai-workflow.git
 revision: <commit-sha-or-tag>
 installed_at: <yyyy-mm-dd>
+host: <claude-code|codex>
 ```
 
-Then create the project adapter. It should document the project's source-of-truth paths, task/PRD schema, validation commands, security and tenancy rules, branch/commit policy, available tools, human output-testing checklist, temporary change-artifact classes, and completed-change archive conventions. Do not replace the project's `AGENTS.md` with the generic workflow repository.
+Then create the project adapter. It should document the agent host and install layout, the project's source-of-truth paths, task/PRD schema, validation commands, security and tenancy rules, branch/commit policy, available tools, human output-testing checklist, temporary change-artifact classes, and completed-change archive conventions. Do not replace the project's agent instruction file with the generic workflow repository.
 
-For a project using the conventional Codex layout, the result should look like:
+The installed result should look like this, with `.claude/` or `.agents/` as the agent home:
 
 ```text
 project/
-  .agents/
+  .claude/            # or .agents/ for Codex
     skills/
+      bwh-adopt/
       bwh-agent-review/
       bwh-archive-change/
       bwh-development/
@@ -81,7 +96,9 @@ project/
       autonomy.md
       collaboration.md
       completion.md
+      context-loading.md
       handoff.md
+      host-conventions.md
       model-routing.md
       states.md
     bwh-ai-workflow.lock
@@ -101,8 +118,8 @@ Update in a temporary checkout first and compare the installed revision with the
 rm -rf /tmp/bwh-ai-workflow-update
 git clone https://github.com/simplybenuk/bwh-ai-workflow.git /tmp/bwh-ai-workflow-update
 git -C /tmp/bwh-ai-workflow-update checkout <new-commit-or-tag>
-diff -ru .agents/skills /tmp/bwh-ai-workflow-update/skills
-diff -ru .agents/contracts /tmp/bwh-ai-workflow-update/contracts
+diff -ru "$AGENT_HOME/skills" /tmp/bwh-ai-workflow-update/skills
+diff -ru "$AGENT_HOME/contracts" /tmp/bwh-ai-workflow-update/contracts
 ```
 
 Before applying an update:
@@ -111,10 +128,12 @@ Before applying an update:
 2. Run the project's representative workflow evals against the current installation.
 3. Review changes to skill triggers, output headings, states, stop rules, and contracts.
 4. Preserve or update the project adapter where local tools, paths, or validation changed.
-5. Copy the new pinned skills and contracts, then update `.agents/bwh-ai-workflow.lock`.
+5. Copy the new pinned skills and contracts, then update `<agent-home>/bwh-ai-workflow.lock`.
 6. Run the project's relevant checks and one end-to-end workflow smoke test.
 
-Do not overwrite project-specific adapters, `AGENTS.md`, source-of-truth documents, PRD files, or local customisations without reviewing the diff. If the update regresses an eval, restore the previous pinned revision and record the failure before trying another prompt change.
+If the project hosts more than one agent, repeat the update for each agent home so the installed revisions stay in step.
+
+Do not overwrite project-specific adapters, the agent instruction file, source-of-truth documents, PRD files, or local customisations without reviewing the diff. If the update regresses an eval, restore the previous pinned revision and record the failure before trying another prompt change.
 
 The recommended migration loop is: change one skill, contract, model, reasoning setting, or tool-routing rule at a time; run the same eval cases; compare correctness, completeness, tokens, latency, tool calls, retries, and cost; then keep the change only if quality remains acceptable.
 

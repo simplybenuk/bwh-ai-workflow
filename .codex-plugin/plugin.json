@@ -1,7 +1,7 @@
 {
   "name": "bwh-ai-workflow",
   "version": "0.1.0",
-  "description": "Reusable spec-driven software delivery workflow for Codex.",
+  "description": "Reusable spec-driven software delivery workflow.",
   "author": {
     "name": "Simply Ben",
     "url": "https://github.com/simplybenuk"
@@ -10,7 +10,7 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "BWH AI Workflow",
-    "shortDescription": "Spec-driven delivery workflow for Codex.",
+    "shortDescription": "Spec-driven delivery workflow.",
     "longDescription": "Adds reusable ideation, specification, refinement, development, review, archival, and workflow-adoption skills for project repositories.",
     "developerName": "Simply Ben",
     "category": "Developer Tools",

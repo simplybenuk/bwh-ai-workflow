@@ -1,0 +1,14 @@
+{
+  "name": "bwh-ai-workflow",
+  "owner": {
+    "name": "Simply Ben",
+    "url": "https://github.com/simplybenuk"
+  },
+  "plugins": [
+    {
+      "name": "bwh-ai-workflow",
+      "source": "./",
+      "description": "Ideation, specification, refinement, development, review, archival, and adoption skills for spec-driven delivery."
+    }
+  ]
+}

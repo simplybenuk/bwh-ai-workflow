@@ -6,6 +6,13 @@
 - Repository:
 - Context map:
 
+## Agent host and install layout
+
+- Agent host(s):
+- Agent home directory (contains installed `skills/` and `contracts/`):
+- Agent instruction file:
+- Adapter location:
+
 ## Required tools and validation
 
 - Discovery tools:
