@@ -27,7 +27,7 @@ The repository file is the authoritative output. The final response is a concise
 
 ## Stop conditions
 
-Stop for human input when feedback conflicts with a confirmed decision, a material product or architecture choice is missing, or repository evidence contradicts the intended design. Do not resolve material disagreement by guessing.
+Stop for human input when feedback conflicts with a confirmed decision, a material product choice is missing, or repository evidence contradicts the intended design. Do not resolve material disagreement by guessing. Do not stop for a technical or reversible choice the agent can make and record as an assumption.
 
 ## Handoff
 

@@ -21,13 +21,13 @@ Create enough shared understanding to begin a useful specification without prema
 6. Write a concise discovery brief suitable for `bwh-spec` into the consuming repository. Include the problem and outcome, actors, known facts, assumptions, decisions needed, scope and non-goals, success signals, risks, dependencies, and materially different options.
 7. Read the persisted brief back and verify that its path and required contents are present. Do not report completion if the artifact was not created successfully.
 
-Ask focused questions only when their answers could change product direction, architecture, permissions, security, data, rollout, or recovery. Otherwise record an explicit assumption.
+Apply the question and assumption rules in `../../contracts/collaboration.md`. Ask only about product direction, the primary actor, scope boundaries, the definition of success, or a commitment that would be expensive to reverse. Decide technical and reversible matters and record them as labelled assumptions tied to the outcome they affect.
 
 The repository file is the authoritative output. Do not substitute a discovery brief published only in chat or duplicate the complete brief in the final response.
 
 ## Stop conditions
 
-Stop before proposing a direction when the problem, primary actor, or desired outcome is unknowable from available context and a reasonable assumption would be risky.
+Stop before proposing a direction when the problem, primary actor, or desired outcome is unknowable from available context and a reasonable assumption would be risky. Do not stop for a technical choice the agent can make and record.
 
 ## Handoff
 

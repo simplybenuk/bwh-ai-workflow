@@ -15,10 +15,10 @@ Produce a decision-ready spec and a readiness bundle that another agent can tran
 
 1. Establish the problem, affected actors, desired outcome, constraints, and work type.
 2. Inspect only the smallest useful set of project planning and source-of-truth artifacts.
-3. Ask only questions whose answers could materially change scope or design. Otherwise record explicit assumptions.
+3. Apply the question and assumption rules in `../../contracts/collaboration.md`. Ask only about product direction, scope boundaries, the definition of success, or a commitment that would be expensive to reverse. Decide technical and reversible matters and record them as explicit assumptions.
 4. Define goals, non-goals, requirements, proposed design, risks, security, rollout, tests, acceptance criteria, decisions, and material open questions.
 5. Resolve the repository's spec location and format from its adapter or established conventions. If neither defines one, create a Markdown spec under `docs/specs/` with a descriptive kebab-case filename and report that fallback. Stop and report a blocker instead if repository guardrails prohibit writing there.
-6. Write the complete spec into the consuming repository. Include the development-readiness bundle in the same file unless project conventions require linked files: proposed task outline, dependencies, affected areas, acceptance criteria, validation plan, risks, and an explicit status of `DRAFT`, `NEEDS REFINEMENT`, `READY FOR HUMAN APPROVAL`, or human-set `APPROVED FOR DEVELOPMENT`.
+6. Write the complete spec into the consuming repository. Include the development-readiness bundle in the same file unless project conventions require linked files: proposed task outline, dependencies, affected areas, acceptance criteria, agent-resolved assumptions tied to the acceptance criteria they affect, validation plan, risks, and an explicit status of `DRAFT`, `NEEDS REFINEMENT`, `READY FOR HUMAN APPROVAL`, or human-set `APPROVED FOR DEVELOPMENT`.
 7. Read the persisted artifact back and verify that it contains the status, requirements, acceptance criteria, task outline, validation plan, decisions, assumptions, and open questions. Do not report completion if the artifact was not created successfully.
 
 Use the consuming project's spec conventions. Keep the spec model-agnostic and proportional to the work. This is the human approval gate before development planning.
@@ -27,7 +27,7 @@ The repository file is the authoritative output. Do not substitute a spec publis
 
 ## Stop conditions
 
-Stop for user input when a missing decision would materially change product direction, architecture, permissions, tenancy, security, migration, rollout, or recovery. Otherwise continue with a labelled assumption.
+Stop for user input when a missing decision would materially change product direction, scope boundaries, or the definition of success, or when it commits to something expensive to reverse: data migration, external contract, permissions, tenancy, or security posture. Continue with a labelled assumption for everything else, including architecture, structure, and rollout mechanics the agent can choose and record.
 
 ## Handoff
 
