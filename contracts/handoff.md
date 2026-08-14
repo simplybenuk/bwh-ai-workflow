@@ -23,3 +23,6 @@ Persist detailed traceability in the repository's spec, planning, progress, or r
 Apply the autonomy, collaboration, completion, model-routing, and state
 contracts from this directory where relevant. Project adapters add local
 validation and source-of-truth requirements.
+
+`bwh-ask` is exempt from this contract: it produces no artifact and no
+workflow handoff.

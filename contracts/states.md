@@ -35,3 +35,6 @@ independent workflow states.
 An agent must not advance an artifact through a human-only transition. An agent
 must not infer human acceptance from review, automated tests, merged code,
 inactivity, or implementation completion.
+
+`bwh-ask` is exempt from this contract: it produces no artifact and must not
+report or infer any state transition.

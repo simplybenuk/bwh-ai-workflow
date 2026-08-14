@@ -88,6 +88,7 @@ project/
       bwh-adopt/
       bwh-agent-review/
       bwh-archive-change/
+      bwh-ask/
       bwh-development/
       bwh-ideate/
       bwh-refine-spec/
@@ -149,6 +150,7 @@ Available skills:
 
 - `bwh-adopt` — install this workflow into a project or update an existing pinned installation.
 - `bwh-archive-change` — archive an accepted change and its temporary workflow documentation into a verified bundle.
+- `bwh-ask` — answer a question about the repository, an idea, or the workflow state without creating or advancing any artifact.
 - `bwh-ideate` — turn an early idea into a bounded direction and discovery brief.
 - `bwh-spec` — create the decision-ready specification and its development-readiness artifacts.
 - `bwh-refine-spec` — repeatedly revise the spec and readiness artifacts until the human approves it.
@@ -156,3 +158,5 @@ Available skills:
 - `bwh-agent-review` — independently review the completed work before human output testing.
 
 The agent review is conditional in depth, but should be used for every substantive implementation task. The review must not silently become a second implementation pass; it reports findings and requests targeted fixes when needed. Archival must not infer human acceptance from that review or from automated validation.
+
+`bwh-ask` sits outside the pipeline. It answers a question about the repository, an idea, or the workflow state without creating or advancing any artifact, and can be invoked at any point — before ideation, mid-spec, mid-development, or standalone.
