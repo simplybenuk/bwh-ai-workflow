@@ -1,20 +1,21 @@
 {
   "name": "bwh-ai-workflow",
-  "version": "0.1.0",
-  "description": "Reusable spec-driven software delivery workflow.",
+  "version": "0.2.0",
+  "description": "BWH Agent Toolkit for product discovery, software delivery, engineering analysis, verification, and technical authoring.",
   "author": {
     "name": "Simply Ben",
     "url": "https://github.com/simplybenuk"
   },
   "repository": "https://github.com/simplybenuk/bwh-ai-workflow",
+  "license": "MIT",
   "skills": "./skills/",
   "interface": {
-    "displayName": "BWH AI Workflow",
-    "shortDescription": "Spec-driven delivery workflow.",
-    "longDescription": "Adds reusable ideation, specification, refinement, development, review, archival, and workflow-adoption skills for project repositories.",
+    "displayName": "BWH Agent Toolkit",
+    "shortDescription": "Portable engineering and delivery skills.",
+    "longDescription": "Adds portable skills for product discovery, specification, delivery, debugging, verification, architecture review, prototyping, and technical authoring.",
     "developerName": "Simply Ben",
     "category": "Developer Tools",
     "capabilities": ["Interactive", "Write"],
-    "defaultPrompt": "Help me use the BWH AI workflow in this project."
+    "defaultPrompt": "Help me use the BWH Agent Toolkit in this project."
   }
 }

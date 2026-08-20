@@ -1,15 +1,14 @@
 {
   "name": "bwh-ai-workflow",
-  "version": "0.2.0",
   "displayName": "BWH Agent Toolkit",
+  "version": "0.2.0",
   "description": "BWH Agent Toolkit for product discovery, software delivery, engineering analysis, verification, and technical authoring.",
-  "author": {
-    "name": "Simply Ben",
-    "url": "https://github.com/simplybenuk"
-  },
+  "author": {"name": "Simply Ben"},
   "homepage": "https://github.com/simplybenuk/bwh-ai-workflow",
   "repository": "https://github.com/simplybenuk/bwh-ai-workflow",
   "license": "MIT",
   "keywords": ["workflow", "engineering", "planning", "review", "verification", "authoring"],
+  "category": "developer-tools",
+  "tags": ["workflow", "engineering", "review", "authoring"],
   "skills": "./skills/"
 }

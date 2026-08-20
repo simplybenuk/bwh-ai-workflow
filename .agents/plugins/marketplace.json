@@ -1,11 +1,12 @@
 {
   "name": "bwh-ai-workflow",
   "interface": {
-    "displayName": "BWH AI Workflow"
+    "displayName": "BWH Agent Toolkit"
   },
   "plugins": [
     {
       "name": "bwh-ai-workflow",
+      "description": "BWH Agent Toolkit for portable engineering and delivery workflows.",
       "source": {
         "source": "local",
         "path": "./"

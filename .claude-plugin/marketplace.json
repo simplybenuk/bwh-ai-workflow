@@ -8,7 +8,7 @@
     {
       "name": "bwh-ai-workflow",
       "source": "./",
-      "description": "Ideation, specification, refinement, development, review, archival, and adoption skills for spec-driven delivery."
+      "description": "BWH Agent Toolkit for product discovery, software delivery, engineering analysis, verification, and technical authoring."
     }
   ]
 }
