@@ -63,8 +63,8 @@ Exercise these observable decisions across the host runs or extra focused runs:
 
 ## Acceptance record
 
-- Fresh full installation: `PASS`
-- Existing workflow update: `PASS`
+- Fresh full installation: `AUTOMATED PASS, HUMAN CONFIRMATION PENDING`
+- Existing workflow update: `AUTOMATED PASS, HUMAN CONFIRMATION PENDING`
 - Codex representative run: `BEHAVIOR PASS, METADATA PENDING`
 - Claude Code representative run: `PENDING`
 - Cursor representative run: `PENDING`

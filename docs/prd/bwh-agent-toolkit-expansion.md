@@ -41,7 +41,7 @@ Deliver the BWH Agent Toolkit as a backwards-compatible expansion of `bwh-ai-wor
 - Toolkit policy eval A passes 41/41 cases with 574/574. Toolkit policy eval B plus workflow regression passes 47/47 cases with 658/658. The 12 overlapping workflow baseline cases remain 168/168.
 - JSON parsing, Python compilation, shell syntax, privacy and host-leakage scans, relative-link resolution, executable-helper checks, and `git diff --check` pass.
 - Clean release-candidate commit `feab4a7e1312cb5be247d4473b632fb79dc70a1c` passes the disposable fresh `full` installation and version 1 workflow migration tests. The first installs 17 skills without changing project-owned files. The second preserves a conflicting local change and migrates to the eight-skill `workflow` profile only after explicit conflict resolution.
-- Human AC15 fresh installation and version 1 update tests pass. Live representative runs and required metadata for Codex, Claude Code, and Cursor remain before any host status changes from `pending`.
+- Automated fresh installation and version 1 update checks pass. Human AC15 confirmation remains pending. Live representative runs and required metadata for Codex, Claude Code, and Cursor remain before any host status changes from `pending`.
 
 ## Next handoff
 
