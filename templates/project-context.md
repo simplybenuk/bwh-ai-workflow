@@ -39,6 +39,8 @@
 - Validation commands:
 - Branch policy:
 - Commit/PR rules:
+- Installed toolkit profile:
+- Toolkit source and pinned revision:
 
 ## Documentation authority
 

@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "toolkit": {
+    "identifier": "bwh-ai-workflow",
+    "display_name": "BWH Agent Toolkit",
+    "version": "0.2.0"
+  },
+  "hosts": {
+    "codex": {"validation_status": "pending"},
+    "claude-code": {"validation_status": "pending"},
+    "cursor": {"validation_status": "pending"}
+  },
+  "profiles": {
+    "workflow": [
+      "bwh-adopt",
+      "bwh-archive-change",
+      "bwh-ask",
+      "bwh-ideate",
+      "bwh-spec",
+      "bwh-refine-spec",
+      "bwh-development",
+      "bwh-agent-review"
+    ],
+    "engineering": [
+      "bwh-diagnose-bugs",
+      "bwh-blast-radius",
+      "bwh-create-verification",
+      "bwh-review-architecture",
+      "bwh-prototype"
+    ],
+    "authoring": [
+      "bwh-technical-writing",
+      "bwh-grill",
+      "bwh-write-agent-instructions",
+      "bwh-skills-audit"
+    ],
+    "full": [
+      "bwh-adopt",
+      "bwh-archive-change",
+      "bwh-ask",
+      "bwh-ideate",
+      "bwh-spec",
+      "bwh-refine-spec",
+      "bwh-development",
+      "bwh-agent-review",
+      "bwh-diagnose-bugs",
+      "bwh-blast-radius",
+      "bwh-create-verification",
+      "bwh-review-architecture",
+      "bwh-prototype",
+      "bwh-technical-writing",
+      "bwh-grill",
+      "bwh-write-agent-instructions",
+      "bwh-skills-audit"
+    ]
+  },
+  "skills": [
+    {"name": "bwh-adopt", "directory": "skills/bwh-adopt", "status": "active", "profiles": ["workflow"], "dependencies": [], "shared_contracts": true, "origin": "core"},
+    {"name": "bwh-archive-change", "directory": "skills/bwh-archive-change", "status": "active", "profiles": ["workflow"], "dependencies": [], "shared_contracts": true, "origin": "core"},
+    {"name": "bwh-ask", "directory": "skills/bwh-ask", "status": "active", "profiles": ["workflow"], "dependencies": [], "shared_contracts": true, "origin": "core"},
+    {"name": "bwh-ideate", "directory": "skills/bwh-ideate", "status": "active", "profiles": ["workflow"], "dependencies": [], "shared_contracts": true, "origin": "core"},
+    {"name": "bwh-spec", "directory": "skills/bwh-spec", "status": "active", "profiles": ["workflow"], "dependencies": [], "shared_contracts": true, "origin": "core"},
+    {"name": "bwh-refine-spec", "directory": "skills/bwh-refine-spec", "status": "active", "profiles": ["workflow"], "dependencies": [], "shared_contracts": true, "origin": "core"},
+    {"name": "bwh-development", "directory": "skills/bwh-development", "status": "active", "profiles": ["workflow"], "dependencies": [], "shared_contracts": true, "origin": "core"},
+    {"name": "bwh-agent-review", "directory": "skills/bwh-agent-review", "status": "active", "profiles": ["workflow"], "dependencies": [], "shared_contracts": true, "origin": "core"},
+    {
+      "name": "bwh-diagnose-bugs", "directory": "skills/bwh-diagnose-bugs", "status": "active", "profiles": ["engineering"], "dependencies": [], "shared_contracts": true, "origin": "derived",
+      "provenance": {"repository": "https://github.com/mattpocock/skills", "revision": "885e2ca4d842d139e9aef4e48d366c63cb1b8013", "license": "MIT", "attribution": "Matt Pocock and contributors", "paths": ["skills/engineering/diagnosing-bugs/SKILL.md"], "adaptations": ["Uses the tightest credible feedback loop instead of a fixed loop time.", "Adds diagnosis-only, secret-redaction, authority, and no-feedback-loop stop rules."]}
+    },
+    {
+      "name": "bwh-blast-radius", "directory": "skills/bwh-blast-radius", "status": "active", "profiles": ["engineering"], "dependencies": [], "shared_contracts": true, "origin": "derived",
+      "provenance": {"repository": "https://github.com/cursor/plugins", "revision": "60c641e4fad674784b30abcf9f8915dea39df38d", "license": "MIT", "attribution": "Cursor pstack contributors", "paths": ["pstack/skills/blast-radius/SKILL.md"], "adaptations": ["Removes pstack routing and named-model dependencies.", "Requires repository evidence, proof levels, and read-only behavior by default."]}
+    },
+    {
+      "name": "bwh-create-verification", "directory": "skills/bwh-create-verification", "status": "active", "profiles": ["engineering"], "dependencies": [], "shared_contracts": true, "origin": "derived",
+      "provenance": {"repository": "https://github.com/cursor/plugins", "revision": "60c641e4fad674784b30abcf9f8915dea39df38d", "license": "MIT", "attribution": "Cursor pstack contributors", "paths": ["pstack/skills/create-verification-skill/SKILL.md"], "adaptations": ["Resolves installation paths through the host contract.", "Adds disposable-environment, evidence-preservation, and process-ownership safeguards."]}
+    },
+    {
+      "name": "bwh-review-architecture", "directory": "skills/bwh-review-architecture", "status": "active", "profiles": ["engineering"], "dependencies": [], "shared_contracts": true, "origin": "derived",
+      "provenance": {"repository": "https://github.com/mattpocock/skills", "revision": "885e2ca4d842d139e9aef4e48d366c63cb1b8013", "license": "MIT", "attribution": "Matt Pocock and contributors", "paths": ["skills/engineering/improve-codebase-architecture/SKILL.md", "skills/engineering/codebase-design/SKILL.md", "skills/engineering/codebase-design/DEEPENING.md", "skills/engineering/codebase-design/DESIGN-IT-TWICE.md"], "adaptations": ["Makes Markdown the required offline report and diagrams optional.", "Uses the project's vocabulary, requires observed costs, and stops before design or implementation."]}
+    },
+    {
+      "name": "bwh-prototype", "directory": "skills/bwh-prototype", "status": "active", "profiles": ["engineering"], "dependencies": [], "shared_contracts": true, "origin": "derived",
+      "provenance": {"repository": "https://github.com/mattpocock/skills", "revision": "885e2ca4d842d139e9aef4e48d366c63cb1b8013", "license": "MIT", "attribution": "Matt Pocock and contributors", "paths": ["skills/engineering/prototype/SKILL.md", "skills/engineering/prototype/LOGIC.md", "skills/engineering/prototype/UI.md"], "adaptations": ["Defaults to isolated temporary storage and disposable dependencies.", "Treats prototype code as evidence and requires separate authority for promotion or publication."]}
+    },
+    {
+      "name": "bwh-technical-writing", "directory": "skills/bwh-technical-writing", "status": "active", "profiles": ["authoring"], "dependencies": [], "shared_contracts": true, "origin": "derived",
+      "provenance": {"repository": "https://github.com/cursor/plugins", "revision": "60c641e4fad674784b30abcf9f8915dea39df38d", "license": "MIT", "attribution": "Cursor pstack contributors", "paths": ["pstack/skills/technical-writing/SKILL.md"], "adaptations": ["Adds explicit document modes and repository-grounded verification.", "Excludes instructions whose primary reader is an agent."]}
+    },
+    {
+      "name": "bwh-grill", "directory": "skills/bwh-grill", "status": "active", "profiles": ["authoring"], "dependencies": [], "shared_contracts": true, "origin": "derived",
+      "provenance": {"repository": "https://github.com/mattpocock/skills", "revision": "885e2ca4d842d139e9aef4e48d366c63cb1b8013", "license": "MIT", "attribution": "Matt Pocock and contributors", "paths": ["skills/productivity/grill-me/SKILL.md", "skills/productivity/grilling/SKILL.md"], "adaptations": ["Limits exhaustive questioning to explicit user requests.", "Adds evidence-first fact finding, numbered recommendations, and BWH handoff options."]}
+    },
+    {
+      "name": "bwh-write-agent-instructions", "directory": "skills/bwh-write-agent-instructions", "status": "active", "profiles": ["authoring"], "dependencies": [], "shared_contracts": true, "origin": "derived",
+      "provenance": {"repository": "https://github.com/mattpocock/skills", "revision": "885e2ca4d842d139e9aef4e48d366c63cb1b8013", "license": "MIT", "attribution": "Matt Pocock and contributors", "paths": ["skills/productivity/writing-for-agents/SKILL.md"], "adaptations": ["Covers BWH contracts, adapters, pointers, and trigger evaluation.", "Routes host mechanics through the host contract and requires one source of truth per rule."]}
+    },
+    {
+      "name": "bwh-skills-audit", "directory": "skills/bwh-skills-audit", "status": "active", "profiles": ["authoring"], "dependencies": [], "shared_contracts": true, "origin": "derived",
+      "provenance": {"repository": "https://github.com/cursor/plugins", "revision": "60c641e4fad674784b30abcf9f8915dea39df38d", "license": "MIT", "attribution": "Cursor pstack contributors", "paths": ["pstack/skills/automate-me/SKILL.md"], "adaptations": ["Audits catalogued skills and locks instead of generating automations from transcripts.", "Makes usage analysis opt-in, aggregate-only, and read-only by default."]}
+    }
+  ]
+}

@@ -12,6 +12,9 @@
 - Agent home directory (contains installed `skills/` and `contracts/`):
 - Agent instruction file:
 - Adapter location:
+- Installed toolkit profile:
+- Toolkit lock file:
+- Catalog schema version:
 
 ## Required tools and validation
 
