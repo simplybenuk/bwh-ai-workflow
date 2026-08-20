@@ -63,9 +63,9 @@ Exercise these observable decisions across the host runs or extra focused runs:
 
 ## Acceptance record
 
-- Fresh full installation: `PENDING`
-- Existing workflow update: `PENDING`
-- Codex representative run: `PENDING`
+- Fresh full installation: `PASS`
+- Existing workflow update: `PASS`
+- Codex representative run: `BEHAVIOR PASS, METADATA PENDING`
 - Claude Code representative run: `PENDING`
 - Cursor representative run: `PENDING`
 - Human decision: `PENDING`
@@ -77,5 +77,13 @@ On 2026-08-20, the user started a fresh Codex thread and ran `bwh-review-archite
 ### Codex observation 2
 
 On 2026-08-20, the user asked `bwh-blast-radius` to review removing `bwh-ask` from the full profile without editing files. The response passed all five behavior checks. It made no changes, separated confirmed, cleared, and unproven risks, cited repository evidence and proof levels, recommended `python3 scripts/validate_catalog.py` as the smallest verification, and stopped without implementing the invalid change. The formal Codex gate remains pending only for the required commit and exposed host/model run metadata.
+
+### Fresh full installation result
+
+On 2026-08-20, a disposable Codex project installed the `full` profile from clean commit `feab4a7e1312cb5be247d4473b632fb79dc70a1c`. The dry run selected 17 skills. The completed install wrote a version 2 lock with the same revision, 17 skills, eight contracts, and 34 managed-file digests. `AGENTS.md` and an unrelated local skill retained their original hashes. The disposable project was cleaned after the assertions passed.
+
+### Version 1 workflow migration result
+
+On 2026-08-20, a disposable version 1 project built from `28d931a4c22a220b0b46b9e0e4080fe08b7c8cd2` was updated from clean commit `feab4a7e1312cb5be247d4473b632fb79dc70a1c`. A local change to `bwh-ask` blocked the preview and left the version 1 lock and installed files unchanged. After the fixture conflict was explicitly resolved, the default preview selected `workflow` and exactly eight skills. Installation wrote the version 2 lock only after validation. The project instruction file, adapter, context map, specification, PRD, and unrelated local skill retained their original hashes. The installed `bwh-ask` frontmatter, trigger text, contracts, and references passed the workflow smoke check. The disposable project was cleaned after the assertions passed.
 
 If testing finds a defect, return the change to `bwh-development` with the evidence. If every check passes and the human accepts the output, hand the change to `bwh-archive-change`.
