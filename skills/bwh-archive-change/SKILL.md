@@ -82,6 +82,14 @@ Lead with the verified archive bundle and manifest. Include the previous and fin
 
 Do not reproduce the manifest, inventory, or full artifact contents in chat.
 
+Once the archive is verified, ask whether the human wants a retrospective on how
+the change was executed, naming `bwh-retro`. Ask after archiving succeeds, so the
+offer never gates completion, and ask once. Accept a decline without repeating
+it, and never start a retro without an explicit yes.
+
+The offer exists because the moment a change closes is when the lesson is
+available and when it is most likely to be forgotten.
+
 ## Output
 
 Use one outcome sentence followed by at most six short bullets covering:
@@ -91,4 +99,5 @@ Use one outcome sentence followed by at most six short bullets covering:
 - moved artifact classes;
 - shared, permanent, excluded, or external artifacts when material;
 - persistence and reference validation;
-- remaining action or blocker.
+- remaining action or blocker;
+- the retrospective offer and the answer given.
