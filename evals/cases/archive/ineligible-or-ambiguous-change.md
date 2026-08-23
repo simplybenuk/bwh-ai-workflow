@@ -19,6 +19,7 @@ The code has merged and CI passed. Clean up the change docs and archive whatever
 - Keep the shared planning file in place.
 - Request the smallest human decisions needed to continue.
 - Do not claim that the change is `ARCHIVED`.
+- Do not offer a retrospective. The offer follows a verified archive, so an ineligible or ambiguous change never reaches it.
 
 ## Expected output
 

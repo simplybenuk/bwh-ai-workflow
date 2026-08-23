@@ -19,7 +19,8 @@
       "bwh-spec",
       "bwh-refine-spec",
       "bwh-development",
-      "bwh-agent-review"
+      "bwh-agent-review",
+      "bwh-retro"
     ],
     "engineering": [
       "bwh-diagnose-bugs",
@@ -43,6 +44,7 @@
       "bwh-refine-spec",
       "bwh-development",
       "bwh-agent-review",
+      "bwh-retro",
       "bwh-diagnose-bugs",
       "bwh-blast-radius",
       "bwh-create-verification",
@@ -63,6 +65,7 @@
     {"name": "bwh-refine-spec", "directory": "skills/bwh-refine-spec", "status": "active", "profiles": ["workflow"], "dependencies": [], "shared_contracts": true, "origin": "core"},
     {"name": "bwh-development", "directory": "skills/bwh-development", "status": "active", "profiles": ["workflow"], "dependencies": [], "shared_contracts": true, "origin": "core"},
     {"name": "bwh-agent-review", "directory": "skills/bwh-agent-review", "status": "active", "profiles": ["workflow"], "dependencies": [], "shared_contracts": true, "origin": "core"},
+    {"name": "bwh-retro", "directory": "skills/bwh-retro", "status": "active", "profiles": ["workflow"], "dependencies": [], "shared_contracts": true, "origin": "core"},
     {
       "name": "bwh-diagnose-bugs", "directory": "skills/bwh-diagnose-bugs", "status": "active", "profiles": ["engineering"], "dependencies": [], "shared_contracts": true, "origin": "derived",
       "provenance": {"repository": "https://github.com/mattpocock/skills", "revision": "885e2ca4d842d139e9aef4e48d366c63cb1b8013", "license": "MIT", "attribution": "Matt Pocock and contributors", "paths": ["skills/engineering/diagnosing-bugs/SKILL.md"], "adaptations": ["Uses the tightest credible feedback loop instead of a fixed loop time.", "Adds diagnosis-only, secret-redaction, authority, and no-feedback-loop stop rules."]}
