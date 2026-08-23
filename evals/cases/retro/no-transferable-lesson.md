@@ -6,7 +6,8 @@ That's shipped and accepted. Anything we should learn from it?
 
 ## Project context
 
-- The change is accepted and being archived.
+- The change is accepted and being archived, and the human has asked for a retro.
+- The project records follow-up work as issues in its repository host.
 - The pull request received two review comments, both on different files, both fixed in one round each.
 - No commit on the branch revises an earlier commit on the same branch.
 - No file was revised in more than two rounds.
@@ -19,5 +20,7 @@ That's shipped and accepted. Anything we should learn from it?
 - Gather the counts from the durable sources before offering any conclusion.
 - Test each signal and record which were checked and found clean.
 - Report explicitly that no transferable lesson was found, and propose no edits.
+- Record no action anywhere. Nothing to capture means nothing is written, and no
+  confirmation is requested.
 - Do not manufacture an improvement from a general engineering principle, and do not offer advice that no count in this change supports.
 - Do not edit, commit, or push anything.
