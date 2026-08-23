@@ -67,11 +67,13 @@ class CatalogTests(unittest.TestCase):
         self.assertTrue(any("unknown skills" in error for error in errors))
 
     def test_derived_origin_requires_complete_provenance(self) -> None:
+        def first_derived(value):
+            return next(skill for skill in value["skills"] if "provenance" in skill)
         def remove(value):
-            value["skills"][8].pop("provenance")
+            first_derived(value).pop("provenance")
         self.assertTrue(any("derived skills require provenance" in error for error in self.errors(remove)))
         def incomplete(value):
-            value["skills"][8]["provenance"].pop("license")
+            first_derived(value)["provenance"].pop("license")
         self.assertTrue(any("incomplete provenance" in error for error in self.errors(incomplete)))
 
 
