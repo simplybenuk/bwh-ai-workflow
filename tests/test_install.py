@@ -287,6 +287,24 @@ class InstallTests(unittest.TestCase):
             self.assertEqual(skill_path.read_bytes(), prior_skill)
             self.assertEqual(lock_path.read_bytes(), prior_lock)
 
+    def test_skill_without_bwh_prefix_installs_and_updates(self) -> None:
+        with tempfile.TemporaryDirectory() as source_directory, tempfile.TemporaryDirectory() as target_directory:
+            source, target = Path(source_directory), Path(target_directory)
+            make_source(source)
+            (source / "skills/plain").mkdir()
+            (source / "skills/plain/SKILL.md").write_text("---\nname: plain\ndescription: Plain.\n---\n\nPlain.\n", encoding="utf-8")
+            catalog = json.loads((source / "catalog.json").read_text())
+            catalog["skills"].append({"name": "plain", "directory": "skills/plain", "status": "active", "profiles": ["engineering"], "dependencies": [], "shared_contracts": False, "origin": "core"})
+            catalog["profiles"]["engineering"].append("plain")
+            catalog["profiles"]["full"].append("plain")
+            (source / "catalog.json").write_text(json.dumps(catalog), encoding="utf-8")
+            commit(source, "add plain")
+            install(source, target, "codex", "full")
+            install(source, target, "codex", "full")
+            lock = json.loads((target / ".agents/bwh-ai-workflow.lock").read_text())
+            self.assertIn("plain", lock["installed_skills"])
+            self.assertTrue((target / ".agents/skills/plain/SKILL.md").is_file())
+
     def test_v2_lock_can_prune_skill_removed_from_new_catalog(self) -> None:
         with tempfile.TemporaryDirectory() as source_directory, tempfile.TemporaryDirectory() as target_directory:
             source, target = Path(source_directory), Path(target_directory)
