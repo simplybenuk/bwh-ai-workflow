@@ -27,7 +27,8 @@
       "bwh-blast-radius",
       "bwh-create-verification",
       "bwh-review-architecture",
-      "bwh-prototype"
+      "bwh-prototype",
+      "burn"
     ],
     "authoring": [
       "bwh-technical-writing",
@@ -50,6 +51,7 @@
       "bwh-create-verification",
       "bwh-review-architecture",
       "bwh-prototype",
+      "burn",
       "bwh-technical-writing",
       "bwh-grill",
       "bwh-write-agent-instructions",
@@ -86,6 +88,7 @@
       "name": "bwh-prototype", "directory": "skills/bwh-prototype", "status": "active", "profiles": ["engineering"], "dependencies": [], "shared_contracts": true, "origin": "derived",
       "provenance": {"repository": "https://github.com/mattpocock/skills", "revision": "885e2ca4d842d139e9aef4e48d366c63cb1b8013", "license": "MIT", "attribution": "Matt Pocock and contributors", "paths": ["skills/engineering/prototype/SKILL.md", "skills/engineering/prototype/LOGIC.md", "skills/engineering/prototype/UI.md"], "adaptations": ["Defaults to isolated temporary storage and disposable dependencies.", "Treats prototype code as evidence and requires separate authority for promotion or publication."]}
     },
+    {"name": "burn", "directory": "skills/burn", "status": "active", "profiles": ["engineering"], "dependencies": [], "shared_contracts": true, "origin": "core"},
     {
       "name": "bwh-technical-writing", "directory": "skills/bwh-technical-writing", "status": "active", "profiles": ["authoring"], "dependencies": [], "shared_contracts": true, "origin": "derived",
       "provenance": {"repository": "https://github.com/cursor/plugins", "revision": "60c641e4fad674784b30abcf9f8915dea39df38d", "license": "MIT", "attribution": "Cursor pstack contributors", "paths": ["pstack/skills/technical-writing/SKILL.md"], "adaptations": ["Adds explicit document modes and repository-grounded verification.", "Excludes instructions whose primary reader is an agent."]}

@@ -24,6 +24,13 @@ class CatalogTests(unittest.TestCase):
     def test_repository_catalog_is_valid(self) -> None:
         self.assertEqual(validate_catalog(self.catalog, ROOT), [])
 
+    def test_burn_is_available_in_engineering_and_full_only(self) -> None:
+        burn = next(skill for skill in self.catalog["skills"] if skill["name"] == "burn")
+        self.assertEqual(burn["profiles"], ["engineering"])
+        self.assertIn("burn", self.catalog["profiles"]["engineering"])
+        self.assertIn("burn", self.catalog["profiles"]["full"])
+        self.assertNotIn("burn", self.catalog["profiles"]["workflow"])
+
     def test_non_object_catalog_and_skill_entries_are_rejected(self) -> None:
         self.assertIn("catalog root must be an object", validate_catalog([], ROOT))
         errors = self.errors(lambda value: value["skills"].append("not-an-object"))
