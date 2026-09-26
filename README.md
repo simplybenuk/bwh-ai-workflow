@@ -6,7 +6,7 @@ The public name is `BWH Agent Toolkit`. The repository, marketplace, and package
 
 ## What is included
 
-The toolkit has 17 active skills split into profiles.
+The toolkit has 18 active skills split into profiles.
 
 ### Workflow
 
@@ -26,6 +26,7 @@ The toolkit has 17 active skills split into profiles.
 - `bwh-create-verification` creates a reusable verification skill and fixture.
 - `bwh-review-architecture` reports observed architectural costs and options.
 - `bwh-prototype` builds disposable evidence for an uncertain idea.
+- `burn` turns expiring usage into useful project improvements, with weekly and rolling five-hour stop rules.
 
 ### Authoring
 
