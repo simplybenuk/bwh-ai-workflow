@@ -1,7 +1,7 @@
 {
   "name": "bwh-ai-workflow",
   "displayName": "BWH Agent Toolkit",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "BWH Agent Toolkit for product discovery, software delivery, engineering analysis, verification, and technical authoring.",
   "author": {"name": "Simply Ben"},
   "homepage": "https://github.com/simplybenuk/bwh-ai-workflow",

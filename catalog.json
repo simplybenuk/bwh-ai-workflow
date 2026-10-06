@@ -3,7 +3,7 @@
   "toolkit": {
     "identifier": "bwh-ai-workflow",
     "display_name": "BWH Agent Toolkit",
-    "version": "0.2.0"
+    "version": "0.3.0"
   },
   "hosts": {
     "codex": {"validation_status": "pending"},
@@ -20,6 +20,7 @@
       "bwh-refine-spec",
       "bwh-development",
       "bwh-agent-review",
+      "bwh-pr-review",
       "bwh-retro"
     ],
     "engineering": [
@@ -45,6 +46,7 @@
       "bwh-refine-spec",
       "bwh-development",
       "bwh-agent-review",
+      "bwh-pr-review",
       "bwh-retro",
       "bwh-diagnose-bugs",
       "bwh-blast-radius",
@@ -67,6 +69,7 @@
     {"name": "bwh-refine-spec", "directory": "skills/bwh-refine-spec", "status": "active", "profiles": ["workflow"], "dependencies": [], "shared_contracts": true, "origin": "core"},
     {"name": "bwh-development", "directory": "skills/bwh-development", "status": "active", "profiles": ["workflow"], "dependencies": [], "shared_contracts": true, "origin": "core"},
     {"name": "bwh-agent-review", "directory": "skills/bwh-agent-review", "status": "active", "profiles": ["workflow"], "dependencies": [], "shared_contracts": true, "origin": "core"},
+    {"name": "bwh-pr-review", "directory": "skills/bwh-pr-review", "status": "active", "profiles": ["workflow"], "dependencies": [], "shared_contracts": true, "origin": "core"},
     {"name": "bwh-retro", "directory": "skills/bwh-retro", "status": "active", "profiles": ["workflow"], "dependencies": [], "shared_contracts": true, "origin": "core"},
     {
       "name": "bwh-diagnose-bugs", "directory": "skills/bwh-diagnose-bugs", "status": "active", "profiles": ["engineering"], "dependencies": [], "shared_contracts": true, "origin": "derived",

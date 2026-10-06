@@ -18,13 +18,11 @@ Review the approved spec, PRD task, implementation diff, relevant tests, validat
 ## Workflow
 
 1. Reconstruct the intended outcome and acceptance criteria from the approved spec and task.
-2. Inspect the implementation and tests for requirement coverage, edge states, failure behavior, permissions, tenancy, data integrity, and responsive or user-visible behavior where relevant.
-3. Verify the reported validation evidence; run focused checks when evidence is missing or suspicious.
-4. Classify findings as blocking, should-fix, or informational.
+2. Inspect the implementation and tests using the shared criteria in [review.md](../../contracts/review.md).
+3. Verify validation evidence under that contract; run focused checks when needed.
+4. Classify and support findings using that contract.
 5. Derive the human output-testing focus from the assumptions the agent resolved without asking. Name the ones with observable consequences and where in the product they can be checked, so the human tests the decisions nobody confirmed.
 6. Decide whether the work is ready for human output testing.
-
-For risky changes, require evidence from the relevant schema, migrations, access controls, rollout, or recovery checks. Treat missing evidence as a gap, not proof that the behavior is safe.
 
 ## Stop conditions
 
