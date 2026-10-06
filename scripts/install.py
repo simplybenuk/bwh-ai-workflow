@@ -29,7 +29,8 @@ LOCK_FIELDS = {
 }
 SHA256_PATTERN = re.compile(r"[0-9a-f]{64}")
 COMMIT_PATTERN = re.compile(r"[0-9a-f]{40}")
-SKILL_NAME_PATTERN = re.compile(r"bwh-[a-z0-9]+(?:-[a-z0-9]+)*")
+SKILL_NAME_PATTERN = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
+LEGACY_SKILL_NAME_PATTERN = re.compile(r"bwh-[a-z0-9]+(?:-[a-z0-9]+)*")
 MARKDOWN_LINK_PATTERN = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 
 
@@ -131,7 +132,7 @@ def validate_v2_lock(lock: object, expected_host: str, agent_home: str, catalog:
         or any(not isinstance(name, str) or not SKILL_NAME_PATTERN.fullmatch(name) for name in installed_skills)
         or len(set(installed_skills)) != len(installed_skills)
     ):
-        raise InstallError("version 2 lock installed_skills must contain unique valid BWH skill names")
+        raise InstallError("version 2 lock installed_skills must contain unique valid skill names")
     contracts = lock["installed_contracts"]
     if not isinstance(contracts, list) or any(not isinstance(path, str) for path in contracts) or len(set(contracts)) != len(contracts):
         raise InstallError("version 2 lock installed_contracts must be a unique path array")
@@ -301,7 +302,7 @@ def legacy_managed_files(source: Path, target: Path, agent_home: str, lock: dict
         for root in skills_root.iterdir():
             if root.is_symlink():
                 raise InstallError(f"legacy skill path must not be a symlink: {root}")
-            if root.is_dir() and SKILL_NAME_PATTERN.fullmatch(root.name):
+            if root.is_dir() and LEGACY_SKILL_NAME_PATTERN.fullmatch(root.name):
                 candidates.extend(path for path in root.rglob("*") if path.is_file() and not path.is_symlink())
     contract_root = safe_target_path(target, f"{agent_home}/contracts", agent_home)
     if contract_root.is_dir():

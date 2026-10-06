@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 IDENTIFIER = "bwh-ai-workflow"
 DISPLAY_NAME = "BWH Agent Toolkit"
-VERSION = "0.2.0"
+VERSION = "0.3.0"
 REPOSITORY = "https://github.com/simplybenuk/bwh-ai-workflow"
 LICENSE = "MIT"
 

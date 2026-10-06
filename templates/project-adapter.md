@@ -39,6 +39,7 @@
 - PRD/task schema:
 - Progress log:
 - Review artifact location and format:
+- Independent PR review evidence and revision-validity policy:
 - Human output-testing evidence location and format:
 - Completed change archive location and bundle naming:
 - Temporary change-artifact classification rules:

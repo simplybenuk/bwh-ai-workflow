@@ -6,7 +6,7 @@ The public name is `BWH Agent Toolkit`. The repository, marketplace, and package
 
 ## What is included
 
-The toolkit has 18 active skills split into profiles.
+The toolkit has 20 active skills split into profiles.
 
 ### Workflow
 
@@ -17,7 +17,9 @@ The toolkit has 18 active skills split into profiles.
 - `bwh-refine-spec` revises a draft specification from feedback and evidence.
 - `bwh-development` implements approved work with validation and traceability.
 - `bwh-agent-review` independently reviews completed implementation.
+- `bwh-pr-review` independently reviews a complete PR or branch before merge.
 - `bwh-archive-change` archives an accepted change and its evidence.
+- `bwh-retro` reviews delivery and records workflow improvements.
 
 ### Engineering
 
@@ -126,6 +128,14 @@ docs/                    discovery, specification, delivery, and test records
 ```
 
 Projects remain authoritative for their own rules, schemas, source-of-truth files, validation commands, security policy, and release process.
+
+## Review before merge
+
+Use `bwh-pr-review` for a local review of code, documentation or a release PR. It requires a fresh reviewer separate from the implementer and binds its findings and verdict to exact base, head and merge-base commits. Changed revisions require renewed review; missing independence or necessary evidence returns `REVIEW INCOMPLETE`.
+
+The skill works without a specification or PRD. `bwh-agent-review` retains the specification acceptance lifecycle and human output-testing handoff. Both use the shared review criteria in `contracts/review.md`.
+
+Projects can require the independent local review and make hosted review optional in their own release policy. Installing the skill does not change an existing hosted-review requirement, CI, acceptance or publication permissions.
 
 ## Validate a checkout
 
