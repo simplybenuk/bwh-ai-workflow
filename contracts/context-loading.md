@@ -6,5 +6,5 @@ Read the project adapter before making repository decisions. Load only the small
 - Verify architecture, schema, permissions, and domain claims against their authoritative artifacts.
 - If sources conflict, report the conflict and do not silently choose.
 - Do not read the entire repository by default.
-- Record the context files that informed the result.
+- Cite authoritative context when it supports a consequential decision or helps the next worker. Do not enumerate every file read.
 - Resolve the agent instruction file and agent home through `host-conventions.md` rather than assuming a filename. Refer to them generically in output, and keep produced artifacts free of host-specific paths and invocation prefixes.
