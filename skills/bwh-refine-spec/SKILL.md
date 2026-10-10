@@ -3,13 +3,15 @@ name: bwh-refine-spec
 description: Iteratively refine a draft specification and its development-readiness artifacts from human feedback or repository evidence until the spec is approved for agentic development.
 ---
 
-# Refine Spec
+# Refine spec
 
 Apply the shared contracts in `../../contracts/autonomy.md`, `../../contracts/collaboration.md`, `../../contracts/completion.md`, `../../contracts/context-loading.md`, `../../contracts/handoff.md`, `../../contracts/model-routing.md`, and `../../contracts/states.md`.
 
 ## Goal
 
 Improve an existing spec without silently changing its intent, until the human can approve it and development can begin without inventing scope.
+
+This skill refines the formal planning path. It does not introduce a spec requirement for bounded work proceeding directly from an authorised request.
 
 ## Workflow
 
@@ -27,26 +29,10 @@ The repository file is the authoritative output. The final response is a concise
 
 ## Stop conditions
 
-Stop for human input when feedback conflicts with a confirmed decision, a material product choice is missing, or repository evidence contradicts the intended design. Do not resolve material disagreement by guessing. Do not stop for a technical or reversible choice the agent can make and record as an assumption.
+Stop for human input when feedback conflicts with a confirmed decision, a material product choice is missing, or repository evidence contradicts the intended design. Do not resolve material disagreement by guessing. Resolve routine technical choices from evidence and record only consequential assumptions.
 
 ## Handoff
 
 Return the changed sections, decisions preserved or changed, remaining questions, readiness status, and the next action: human approval, another refinement pass, or `bwh-development` after the status becomes `APPROVED FOR DEVELOPMENT`.
 
-## Output
-
-Return exactly these headings:
-
-- `artifact_path`
-- `status`
-- `changed_sections`
-- `decisions_preserved`
-- `decisions_changed`
-- `assumptions`
-- `remaining_questions`
-- `readiness_check`
-- `persistence_validation`
-- `recommended_next_action`
-- `context_files_read`
-- `source_of_truth_decisions`
-- `conflicts_found`
+Include the spec path, status, persistence verification, material changes or questions, and next action. Use the project's required format when one exists; otherwise a concise prose handoff is sufficient. Do not repeat the full spec or inventory every file read.

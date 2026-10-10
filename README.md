@@ -15,7 +15,7 @@ The toolkit has 20 active skills split into profiles.
 - `bwh-ideate` turns an early idea into a bounded discovery brief.
 - `bwh-spec` creates a development-ready specification for approval.
 - `bwh-refine-spec` revises a draft specification from feedback and evidence.
-- `bwh-development` implements approved work with validation and traceability.
+- `bwh-development` implements authorised requests or approved planned tasks with validation and independent review.
 - `bwh-agent-review` independently reviews completed implementation.
 - `bwh-pr-review` independently reviews a complete PR or branch before merge.
 - `bwh-archive-change` archives an accepted change and its evidence.
@@ -38,6 +38,33 @@ The toolkit has 20 active skills split into profiles.
 - `bwh-skills-audit` reviews a skill collection and recommends what to keep, change, add, or retire.
 
 The `full` profile contains every skill. Project installs default to `workflow`. Machine-level plugin installs expose the full collection.
+
+## Default delivery
+
+For a clear change with defined scope, start with the request, implement it, run the
+project's required checks, and get a fresh independent review. Follow the
+project's acceptance policy. A project can use automated acceptance; human
+output testing is required when its rules, consequential residual risk, or
+human judgment require it.
+
+Bounded scope can include a substantial feature. The agent can choose an
+internal implementation sequence, keep a task list, and delegate within project
+rules without adding a formal spec or approval gate for multiple delivery chunks.
+This path needs no mandatory spec, PRD, state transition, progress log, archive,
+or retrospective. Record consequential decisions proportionally,
+using existing project artifacts when needed. Keep handoffs concise without
+fixed headings unless a project format or actual consumer requires them.
+
+Use the formal specification path when explicitly requested, required by
+applicable project policy, or needed to settle consequential unresolved product
+decisions. Respect existing approved specs and non-goals in either path.
+The formal path preserves persisted specifications,
+human approval, required planning artifacts, and validation. Archive accepted
+documentation or run a retrospective only when explicitly requested.
+
+Projects remain authoritative for schemas, domain rules, validation, acceptance,
+and release policy. Implementation authority does not grant separate commit,
+push, publication, review-request, or merge authority.
 
 ## Hosts
 
@@ -133,7 +160,7 @@ Projects remain authoritative for their own rules, schemas, source-of-truth file
 
 Use `bwh-pr-review` for a local review of code, documentation or a release PR. It requires a fresh reviewer separate from the implementer and binds its findings and verdict to exact base, head and merge-base commits. Changed revisions require renewed review; missing independence or necessary evidence returns `REVIEW INCOMPLETE`.
 
-The skill works without a specification or PRD. `bwh-agent-review` retains the specification acceptance lifecycle and human output-testing handoff. Both use the shared review criteria in `contracts/review.md`.
+The skill works without a specification or PRD. `bwh-agent-review` reviews delivered work against the request or governing approved spec and follows project acceptance policy. Both use the shared review criteria in `contracts/review.md`.
 
 Projects can require the independent local review and make hosted review optional in their own release policy. Installing the skill does not change an existing hosted-review requirement, CI, acceptance or publication permissions.
 

@@ -9,11 +9,12 @@ I tested and accept this change. Archive its complete documentation bundle.
 - Variant A: the persisted change state is `IN DEVELOPMENT`.
 - Variant B: the persisted state is `READY FOR HUMAN TESTING`, but the referenced change specification is missing.
 - Human acceptance is explicit in both variants.
+- The project requires formal human-testing states and a persisted change spec for this planned change.
 - Other temporary files appear related to the change.
 
 ## Expected invariants
 
-- In Variant A, reject archival because the persisted state is ineligible.
+- In Variant A, reject archival because the persisted state is ineligible under this project's formal workflow. Do not make this state a requirement for bounded projects that do not use it.
 - In Variant B, treat the missing change specification as a missing required artifact.
 - Stop before creating a bundle, copying or removing files, updating shared records, or changing state.
 - Do not treat explicit human acceptance as permission to bypass eligibility or required evidence.

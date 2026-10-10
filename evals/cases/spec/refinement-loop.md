@@ -13,6 +13,6 @@ The human has read the draft spec and asks to narrow the first release to one wo
 - Do not edit the active PRD or implementation code unless explicitly requested.
 - Identify any remaining material question.
 
-## Expected output headings
+## Expected output
 
-`artifact_path`, `status`, `changed_sections`, `decisions_preserved`, `decisions_changed`, `assumptions`, `remaining_questions`, `readiness_check`, `persistence_validation`, `recommended_next_action`
+A concise handoff with the updated spec path, readiness status, material changes or remaining questions, persistence verification, and next action. Preserve required project formats without inventing fixed chat headings.
