@@ -33,6 +33,7 @@
 
 ## Planning and delivery
 
+- When formal specification or task planning is required:
 - Discovery location and format:
 - Spec location and format:
 - Dedicated planning/task artifact locations and formats:
@@ -40,6 +41,7 @@
 - Progress log:
 - Review artifact location and format:
 - Independent PR review evidence and revision-validity policy:
+- Acceptance policy, including automated acceptance and required human judgment:
 - Human output-testing evidence location and format:
 - Completed change archive location and bundle naming:
 - Temporary change-artifact classification rules:

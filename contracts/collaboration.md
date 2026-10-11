@@ -1,31 +1,26 @@
-# Collaboration Contract
+# Collaboration contract
 
-State the current phase and intended outcome before substantial work. Ask only questions whose answers could materially change the result. Report conclusions, evidence, blockers, assumptions, and next actions. Do not narrate routine tool calls.
+State the intended outcome before substantial work. Ask only questions whose answers could materially change the result. Report conclusions, evidence, blockers, material assumptions, and next actions. Do not narrate routine tool calls.
 
-Preserve the human gates: the human approves the specification before development and tests the product output after agent review. Do not claim either approval on the human's behalf.
+An authorised request with defined scope is sufficient authority for local implementation, including a substantial feature. The agent can choose an implementation sequence, keep an internal task list, and delegate within the project's rules without creating a formal spec or another approval gate.
+
+Use formal specification and planning when the human requests them, project rules require them, or consequential unresolved product decisions need that path. Multiple independently verifiable delivery chunks alone do not require it. Respect existing approved specifications and non-goals. Do not create planning artifacts merely to enter development.
+
+Preserve approval gates that apply to the chosen workflow. A formal spec needs human approval before implementation. Follow the project's acceptance policy after review, including automated acceptance when permitted. Human output testing is required when project policy, unresolved consequential risk, or a judgment only the human can make requires it. Never claim human approval or acceptance on the human's behalf.
 
 ## Questions
 
 Separate open decisions by who can actually answer them.
 
-- **Technical and reversible** — structure, libraries, naming, test approach, rollout mechanics, anything a later change can undo cheaply. Decide these, record them as labelled assumptions, and do not ask.
-- **Product or irreversible** — the problem being solved, the primary actor, scope boundaries, the definition of success, and commitments that are expensive to reverse such as data migrations, external contracts, permissions, tenancy, and security posture. Ask these, and do not proceed on silence.
+- Decide routine technical and reversible choices from repository evidence. Record them only when their consequences matter to acceptance, compatibility, rollout, or later work.
+- Ask about unresolved product direction, actors, scope, success criteria, or commitments that are expensive to reverse, such as data migrations, external contracts, permissions, tenancy, and security posture. Use decisions and authorisation already supplied. Do not proceed on silence when an answer is required.
 
 Never ask the human something the repository, the code, or the available tools can establish. Facts are the agent's job; decisions are the human's.
 
-When asking, batch. Put every question whose prerequisites are already settled into one numbered round, attach a recommended answer to each, and wait for the round to be answered. A question that depends on another question in the same round belongs to a later round, not this one.
-
-Format each question so a round can be answered by number:
-
-```text
-Q1 - <short title>: <question, including options where they matter>
-Recommendation: <the answer the agent would take if this went unanswered>
-```
+Batch independent questions and give a recommendation when useful. Use a format the human can answer easily. Keep dependent questions for a later round, and continue unaffected work while waiting.
 
 ## Assumptions
 
-Record every decision the agent resolved on its own behalf, in the persisted artifact rather than only in chat.
+Record consequential decisions and assumptions where the project already keeps them, or in the change handoff when no durable artifact is needed. Explain the observable consequence and the requirement or risk it affects. Persist decisions that later delivery chunks or maintainers will need.
 
-Assumptions exist for traceability, not as a pre-approval review surface. The human's interrogation happens against the built product, so an assumption must survive to that point in a usable form: write each one so it can be shown true or false against observable behaviour, and tie it to the acceptance criterion or requirement it affects. A reader who hits unexpected behaviour during output testing should be able to trace it back to the decision that caused it in one step.
-
-Assumptions that cannot be expressed against observable behaviour are implementation detail. Keep them brief and do not inflate the artifact with them.
+Do not create a separate log for routine implementation choices. Reversible naming, formatting, and local structure usually need no record.

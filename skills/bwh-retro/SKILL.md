@@ -25,9 +25,8 @@ audit toolkit installation, drift, or lock state. That is `bwh-skills-audit`.
 ## Eligibility
 
 **Human-invoked only.** Run when the human asks for a retro, a post-mortem, or
-what to do differently. `bwh-archive-change` offers one after archiving an
-accepted change, and the human's yes to that offer is a request. The archiving
-itself is not. Do not start one because a change finished, because a review
+what to do differently. Archiving an accepted change is not a retro request.
+Do not start one because a change finished, because a review
 closed, or because one of the signals below looks present.
 
 A retro needs a finished change with a durable record. If the work left no

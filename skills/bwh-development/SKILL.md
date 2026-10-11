@@ -1,6 +1,6 @@
 ---
 name: bwh-development
-description: Execute bounded PRD tasks in a project repository with focused changes, required validation, planning traceability, and a handoff to independent agent review.
+description: Implement authorised scoped requests or approved planned tasks with focused changes, project validation, and independent review. Use for requested fixes, features, and implementation work.
 ---
 
 # Development
@@ -9,37 +9,31 @@ Apply the shared contracts in `../../contracts/autonomy.md`, `../../contracts/co
 
 ## Goal
 
-Implement the requested task or authorised run count while preserving the approved spec, project scope, security, and source-of-truth rules.
+Complete the requested change while preserving project scope, security, source-of-truth rules, and any approved specification that governs the work.
+
+## Authority and planning
+
+A clear request with defined scope authorises local implementation. Bounded scope does not mean a small change. A substantial settled feature can use an internal implementation sequence or task list, and delegation within project rules, without a written spec, PRD, progress log, state transition, or new human approval prerequisite.
+
+Use the formal planning path when explicitly requested, required by applicable project policy, or needed to resolve consequential product decisions. Multiple independently verifiable delivery chunks alone do not require it. For the formal path, confirm human approval of the governing spec and any project-required readiness artifacts before implementation. Update the project's plan or PRD from the approved task outline when its planning rules require it, checking active, backlog, and completed work for duplicates. Preserve existing approved specs and non-goals in either path. Stop on missing required approval; do not infer approval from a draft being complete.
 
 ## Workflow
 
-1. Confirm the referenced spec is human-approved with status `APPROVED FOR DEVELOPMENT`. Stop if approval or required readiness artifacts are missing.
-2. Finalize or update the consuming project's PRD from the approved task outline, checking active, backlog, and completed work for duplicates.
-3. Select the next eligible task using the project's planning rules.
-4. Inspect only relevant context and confirm the task is still consistent with the approved spec.
-5. Implement the smallest complete change and add or update focused tests.
-6. Run the project's required validation suite and resolve failures that are in scope.
-7. Update the repository's planning or progress artifact with the task status, material changes, validation results, commit status, blockers, and next handoff. Keep detailed traceability there. Commit only when the project workflow authorises commits.
-8. Hand the completed work to `bwh-agent-review` before human output testing.
+1. Read the request, project adapter, relevant instructions, and authoritative context. Establish the intended behaviour, acceptance criteria, validation requirements, and allowed actions. Use the project's planning rules to select a task when working from a plan.
+2. Resolve routine technical choices from evidence. Ask only for missing consequential decisions, and continue unaffected work while waiting.
+3. Implement the smallest complete change. Add or update focused tests when needed to verify the changed behaviour; preserve every project-required check.
+4. Run required validation, including real schema, access-control, rollout, or recovery checks for affected risks. Resolve failures that are in scope. Mocked evidence does not prove a live boundary is safe.
+5. Record material decisions and validation proportionally. Update existing planning or progress artifacts when required by project policy or the chosen formal workflow. Commit only with separate authority.
+6. Hand the result to a fresh independent reviewer using `bwh-agent-review`. Reuse adequate review evidence for unchanged inputs; additional review should cover a different risk, changed work, or an explicit project requirement.
 
 Use stronger reasoning or additional review when the task crosses architecture, tenancy, permissions, security, migration, rollout, or recovery boundaries, or when validation repeatedly fails.
 
 ## Stop conditions
 
-Stop on a material blocker, failed required validation that cannot be safely resolved in scope, missing authority for an external or destructive action, or scope expansion. Record the blocker and do not start another task.
+Stop on a material blocker, failed required validation that cannot be safely resolved in scope, missing authority for an external or destructive action, or material scope expansion. Report the blocker and do not start another planned task. Do not manufacture planning artifacts to resolve a gate that does not apply to bounded work.
 
 ## Handoff
 
-Return a compact outcome summary that links the authoritative planning or progress artifact. Include the completed task, material changes, validation result, commit status when relevant, blockers or assumptions only when material, and the next priority. Explicitly state that the next handoff is `bwh-agent-review`.
+Lead with what changed and why. Include required validation results and their limits, material assumptions or blockers, relevant files or existing artifacts, commit status when relevant, and the `bwh-agent-review` handoff. Keep the format proportional to the change.
 
-Do not repeat approval evidence already recorded in the spec, enumerate every changed or inspected file, reproduce test logs, or restate the planning artifact. Mention paths only when they help the user navigate or act.
-
-## Output
-
-Use one outcome sentence followed by at most five short bullets covering:
-
-- completed task and planning artifact
-- material changes
-- validation result
-- material blocker, assumption, or commit status when relevant
-- next priority and `bwh-agent-review` handoff
+After review, follow the project's acceptance policy. Human output testing is conditional on that policy, consequential residual risk, or a decision only the human can judge. When required checks and review pass and no required work remains, bounded work can finish. Do not automatically archive it or start a retrospective.

@@ -17,4 +17,4 @@ Start development from the supplied human-approved spec and its readiness artifa
 
 ## Expected output
 
-One outcome sentence and no more than five short bullets covering the completed task, material changes, validation, relevant blocker or commit status, and the `bwh-agent-review` handoff.
+A compact outcome with the authoritative plan, material changes, validation, relevant blockers or commit status, and the `bwh-agent-review` handoff. Preserve project-required formats; no fixed chat headings are required.

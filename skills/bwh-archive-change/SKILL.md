@@ -1,9 +1,9 @@
 ---
 name: bwh-archive-change
-description: Archive an accepted delivered change and all evidence-linked temporary workflow documentation into a verified, manifest-backed bundle. Use when the human asks to complete, close, or archive a change after successful output testing.
+description: Archive an accepted delivered change and its evidence-linked temporary documentation into a verified, manifest-backed bundle. Use only when the human explicitly requests archival or closure of accepted change documentation.
 ---
 
-# Archive Change
+# Archive change
 
 Apply the shared contracts in `../../contracts/autonomy.md`, `../../contracts/collaboration.md`, `../../contracts/completion.md`, `../../contracts/context-loading.md`, `../../contracts/handoff.md`, `../../contracts/model-routing.md`, and `../../contracts/states.md`, plus the consuming project's adapter.
 
@@ -15,10 +15,12 @@ Move every relevant standalone temporary change artifact into one verified archi
 
 Require both:
 
-- persisted state `READY FOR HUMAN TESTING`; and
-- explicit human confirmation that output testing passed or the delivered change is accepted.
+- completion of the project's applicable validation, review, and acceptance requirements; and
+- explicit human confirmation that the delivered change is accepted.
 
 Do not infer acceptance from agent review, automated validation, merged code, inactivity, or implementation completion.
+
+For projects using the formal human-testing states, require persisted state `READY FOR HUMAN TESTING` and the required human-testing evidence. For bounded work without a spec or state artifact, use the request and project acceptance evidence. Do not manufacture a spec, progress log, or testing record to make archival eligible. If no temporary artifacts need archiving, report that instead of creating an empty workflow bundle.
 
 ## Artifact classification
 
@@ -40,7 +42,7 @@ Exclude code, tests, build output, dependencies, unrelated notes, and external r
 
 ## Workflow
 
-1. Read the change spec, adapter, context map, and relevant planning, progress, review, and testing evidence. Load only the source-of-truth files needed to establish state, ownership, and paths.
+1. Read the change request or governing spec, adapter, context map, and available planning, progress, review, and acceptance evidence. Load only the sources needed to establish eligibility, ownership, and paths. A missing artifact required by project policy or referenced as evidence remains a blocker.
 2. Verify eligibility.
 3. Build an evidence-backed inventory. For each candidate record its role, current path, standalone or shared ownership, relationship evidence, and proposed disposition.
 4. Apply the adapter's artifact classes and archive conventions. Otherwise use the classifications above.
@@ -51,9 +53,9 @@ Exclude code, tests, build output, dependencies, unrelated notes, and external r
    - final state `ARCHIVED`;
    - archival date and explicit human acceptance evidence;
    - each candidate's role, original path, final or kept-in-place path, and disposition;
-   - implementation, validation, review, and human-testing references;
+   - implementation, validation, review, and applicable acceptance references;
    - excluded artifacts and unresolved external references.
-8. Set the archived spec status to `ARCHIVED` and add its former path, bundle path, acceptance evidence, and manifest reference.
+8. If a formal spec exists, set its archived status to `ARCHIVED` and add its former path, bundle path, acceptance evidence, and manifest reference. Otherwise record the completed archive in the manifest and any project-required index.
 9. Persist all archive-bound artifacts and the manifest without overwrite.
 10. Read and validate the complete bundle before removing any original.
 11. Update authoritative shared planning, progress, and index entries that would otherwise show the change as active or point to moved paths. Change only this change's entry, then read it back.
@@ -78,26 +80,8 @@ The explicit archive request authorizes removal only of the verified standalone 
 
 ## Handoff
 
-Lead with the verified archive bundle and manifest. Include the previous and final states, moved artifact classes, shared or permanent documents kept in place, validation evidence, partial or excluded references, and any remaining action.
+Lead with the verified archive bundle and manifest. Include applicable state changes, moved artifact classes, shared or permanent documents kept in place, validation evidence, partial or excluded references, and any remaining action.
 
 Do not reproduce the manifest, inventory, or full artifact contents in chat.
 
-Once the archive is verified, ask whether the human wants a retrospective on how
-the change was executed, naming `bwh-retro`. Ask after archiving succeeds, so the
-offer never gates completion, and ask once. Accept a decline without repeating
-it, and never start a retro without an explicit yes.
-
-The offer exists because the moment a change closes is when the lesson is
-available and when it is most likely to be forgotten.
-
-## Output
-
-Use one outcome sentence followed by at most six short bullets covering:
-
-- bundle and manifest paths;
-- previous and final states;
-- moved artifact classes;
-- shared, permanent, excluded, or external artifacts when material;
-- persistence and reference validation;
-- remaining action or blocker;
-- the retrospective offer and the answer given.
+Archival does not start a retrospective or require an additional decision about one. Use `bwh-retro` only when the human requests it.

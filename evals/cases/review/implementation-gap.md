@@ -6,6 +6,7 @@ Review the completed implementation against the approved spec before the user te
 
 ## Expected invariants
 
+- Use a fresh reviewer separate from the implementer. Report an incomplete review if independence or necessary evidence is unavailable.
 - Compare behavior against the approved acceptance criteria, not personal preference.
 - Inspect the diff, affected tests, and validation evidence.
 - Identify missing states, permission or tenancy risks, regressions, and unsupported claims.
@@ -15,4 +16,4 @@ Review the completed implementation against the approved spec before the user te
 
 ## Expected output
 
-One verdict sentence and no more than six short bullets covering actionable findings, validation, material residual risk, human test focus when ready, a review artifact when one exists, and the next handoff state.
+A concise verdict with actionable findings, validation, material residual risk, and the next action under the project's human-testing policy. An applicable review artifact or state is included without inventing one for every change.

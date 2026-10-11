@@ -7,6 +7,7 @@ I tested and accept the delivered change. Archive it and all of the temporary do
 ## Project context
 
 - The change spec state is `READY FOR HUMAN TESTING`.
+- The project uses the formal human-testing workflow and all required validation and review have passed.
 - The adapter defines `docs/history/changes/<change-id>/` as the archive bundle path.
 - Evidence links standalone discovery, spec, task plan, progress, review, and human-test files to the change.
 - A shared backlog contains this change plus other active work.
@@ -24,11 +25,11 @@ I tested and accept the delivered change. Archive it and all of the temporary do
 - Set the archived change spec state to `ARCHIVED`.
 - Persist and read back the complete bundle, manifest, and shared-reference update before removing originals.
 - Return a concise handoff rather than reproducing the manifest.
-- Offer a retrospective once, after the archive verifies, and report the answer. Do not start one, and do not let the offer gate or delay completion.
+- Do not start a retrospective or add a decision about one unless requested.
 
 ## Expected output
 
-One outcome sentence and no more than six short bullets covering the bundle and manifest paths, state transition, moved artifact classes, documents kept in place, persistence and reference validation, remaining action, and the retrospective offer with its answer.
+A concise outcome with the bundle and manifest paths, applicable state transition, material artifact dispositions, persistence and reference validation, and any remaining action.
 
 ## Scoring rubric
 

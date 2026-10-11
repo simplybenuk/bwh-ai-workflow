@@ -14,6 +14,6 @@ Write a specification for the supplied bounded feature idea and prepare it for h
 - Return a concise handoff rather than duplicating the complete specification in chat.
 - Do not edit the active PRD or implementation code.
 
-## Expected output headings
+## Expected output
 
-`artifact_path`, `status`, `summary`, `confirmed_decisions`, `assumptions_and_open_questions`, `persistence_validation`, `recommended_next_step`, `context_files_read`, `source_of_truth_decisions`, `conflicts_found`
+A concise handoff with the persisted spec path, status, persistence verification, material decisions or questions, and next action. Omit empty categories and exhaustive context lists unless a project format requires them.
