@@ -5,7 +5,7 @@ description: Independently review a complete pull request or branch before merge
 
 # Pull request review
 
-Apply `../../contracts/autonomy.md`, `../../contracts/context-loading.md` and
+Apply `../../contracts/autonomy.md`, `../../contracts/collaboration.md`, `../../contracts/context-loading.md` and
 `../../contracts/review.md`, plus the consuming project's adapter when present.
 Resolve project instructions through `../../contracts/host-conventions.md`.
 
@@ -83,3 +83,6 @@ Review authorises inspection, safe non-destructive checks and a local review
 artifact. It does not authorise implementation edits, dependency installation,
 shared-database resets, publication, approval or merge. Return findings to the
 implementer; fixes and external actions require their own authority.
+The local deferred-findings log is a permitted review artifact, subject to project
+rules. Report an unwritable log entry in the result instead. An uncommitted log
+entry is not part of the pinned head and does not change what the verdict covers.

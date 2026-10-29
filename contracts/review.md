@@ -30,3 +30,11 @@ Classify findings as blocking, should-fix or informational. Support each with a
 location or test, a concrete failure condition and its consequence. Separate
 confirmed defects from missing evidence and unsupported suspicions. Consolidate
 related findings; do not reproduce full logs or an exhaustive file inventory.
+
+Assess plausible likelihood and impact in context, explaining the evidence and
+uncertainty rather than applying a numerical cutoff. A rare but severe outcome
+may still be material. Distinguish a supported finding worth fixing now from a
+credible low-priority finding that can be deferred and an unsupported suspicion.
+Do not dismiss missing evidence as unlikely. Apply the deferred-findings guidance
+in `collaboration.md` to credible low-priority findings, and include them in the
+review result. Deferral does not override project gates or the review verdict.

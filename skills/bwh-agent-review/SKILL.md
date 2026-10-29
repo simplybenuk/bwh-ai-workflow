@@ -34,6 +34,6 @@ Return the work to `bwh-development` when a blocking finding exists, required va
 
 ## Handoff
 
-Return the verdict, supported findings, validation performed and its limits, material residual risk, and any remaining acceptance action. Persist evidence in a review artifact only when the project or chosen workflow requires one. Use project states when applicable; use `READY FOR HUMAN TESTING` or `NOT READY FOR HUMAN TESTING` only for a workflow that requires human testing.
+Return the verdict, supported findings, validation performed and its limits, material residual risk, and any remaining acceptance action. Record eligible deferred findings under the collaboration contract; otherwise persist evidence in a review artifact only when the project or chosen workflow requires one. Use project states when applicable; use `READY FOR HUMAN TESTING` or `NOT READY FOR HUMAN TESTING` only for a workflow that requires human testing.
 
 Consolidate related findings and omit empty categories, full logs, repeated implementation summaries, and exhaustive inspected-file lists. Required publication or merge review remains a separate gate. Completed bounded work needs no automatic archive or retrospective; `bwh-archive-change` and `bwh-retro` run only when requested.

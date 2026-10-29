@@ -162,6 +162,8 @@ Use `bwh-pr-review` for a local review of code, documentation or a release PR. I
 
 The skill works without a specification or PRD. `bwh-agent-review` reviews delivered work against the request or governing approved spec and follows project acceptance policy. Both use the shared review criteria in `contracts/review.md`.
 
+Design, development and review use a proportionate approach to risks. Credible low-priority findings can be recorded in the consuming project's existing deferred-findings log, or in `docs/deferred-findings.md` when no convention exists. Entries explain the evidence, reason for deferral and when to revisit. Serious concerns and required checks still follow project gates; unsupported speculation does not need a log entry or an automatic GitHub issue.
+
 Projects can require the independent local review and make hosted review optional in their own release policy. Installing the skill does not change an existing hosted-review requirement, CI, acceptance or publication permissions.
 
 ## Validate a checkout

@@ -24,3 +24,29 @@ Batch independent questions and give a recommendation when useful. Use a format 
 Record consequential decisions and assumptions where the project already keeps them, or in the change handoff when no durable artifact is needed. Explain the observable consequence and the requirement or risk it affects. Persist decisions that later delivery chunks or maintainers will need.
 
 Do not create a separate log for routine implementation choices. Reversible naming, formatting, and local structure usually need no record.
+
+## Proportionate risks and deferred findings
+
+During design, implementation and testing, consider the plausible conditions,
+likelihood and consequences of a concern using available evidence. Do not add
+requirements, defensive code or tests for speculative future cases without a
+reason grounded in the request or project context. Uncertainty is not evidence
+that a risk is unlikely. Follow required project checks and acceptance criteria.
+
+When a concern is credible and concrete but reasonably low priority, record it
+for later rather than expanding the current work automatically. Use the project's
+existing deferred-findings convention, or `docs/deferred-findings.md` in the
+consuming repository if none exists. Create it only when there is an entry. Check
+for duplicates and update an existing entry where appropriate. Each entry needs
+the condition and consequence, evidence and uncertainty, why deferral is
+reasonable, a source or location, a trigger for revisiting, and status (open,
+resolved or no longer relevant). Revisit relevant entries when working in that
+area; update their status or promote them to an issue when warranted and
+authorised. Do not create GitHub issues automatically.
+
+Do not log unsupported speculation or routine choices. A log is not a waiver
+for requirements, required evidence, or serious security, tenancy, permission,
+or data-integrity concerns. If project rules or the permitted actions prevent
+writing the log, report the finding and proposed entry in the handoff instead.
+Mention deferred findings and the log location in the result so the decision is
+visible. Do not treat the mere absence of a log as a blocker.
