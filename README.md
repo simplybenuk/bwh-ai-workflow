@@ -6,7 +6,9 @@ The public name is `BWH Agent Toolkit`. The repository, marketplace, and package
 
 ## What is included
 
-The toolkit has 20 active skills split into profiles.
+The toolkit has 21 active skills split into profiles.
+
+`bwh-model-selector` is included in every profile. It delegates useful work to strictly lower model tiers, checks results, asks before higher-tier or incomparable model choices, and warns when its dated guidance is at least 60 days old. Every toolkit skill routes through this policy. Standalone tasks can use it directly; installation alone does not activate it for unrelated work outside toolkit skills.
 
 ### Workflow
 

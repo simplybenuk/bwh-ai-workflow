@@ -5,6 +5,8 @@ description: Audit a BWH Agent Toolkit installation or skill collection by compa
 
 # Audit skills
 
+Apply [model routing](../../contracts/model-routing.md) for task delegation and model selection.
+
 Inspect a skill installation without changing it. Treat the catalog and installed lock as claims to verify, not permission to reconcile them.
 
 Apply `../../contracts/autonomy.md`, `../../contracts/context-loading.md`, and the consuming project's adapter when present.

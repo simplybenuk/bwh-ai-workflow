@@ -5,6 +5,8 @@ description: Write or revise human-facing technical documentation, including REA
 
 # Write technical documents
 
+Apply [model routing](../../contracts/model-routing.md) for task delegation and model selection.
+
 Write for the reader's task. Inspect the repository before drafting so paths, symbols, flags, commands, and product terms match the source.
 
 ## Choose the document's purpose

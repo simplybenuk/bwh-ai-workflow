@@ -5,6 +5,8 @@ description: Install or update the BWH Agent Toolkit in a project, select a cata
 
 # Adopt the BWH Agent Toolkit
 
+Apply [model routing](../../contracts/model-routing.md) for task delegation and model selection.
+
 Apply `../../contracts/autonomy.md`, `../../contracts/completion.md`, and `../../contracts/host-conventions.md`.
 
 The toolkit source consists of `catalog.json`, catalogued `skills/`, shared `contracts/`, and project templates. The consuming project remains authoritative for its agent instruction file, adapter, context map, source-of-truth documents, validation commands, permissions, and release policy.

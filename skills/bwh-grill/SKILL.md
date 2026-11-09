@@ -5,6 +5,8 @@ description: Run an exhaustive, decision-tree interview about a plan, design, or
 
 # Grill a decision
 
+Apply [model routing](../../contracts/model-routing.md) for task delegation and model selection.
+
 Question the user until the decision tree has no unresolved branch. This explicit interview mode does not replace the normal BWH rule to minimize questions.
 
 ## Build the decision tree

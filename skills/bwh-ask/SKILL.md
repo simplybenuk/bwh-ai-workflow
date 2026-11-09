@@ -5,6 +5,8 @@ description: Answer a question about the repository, an idea, or the workflow st
 
 # Ask
 
+Apply [model routing](../../contracts/model-routing.md) for task delegation and model selection.
+
 Apply the shared contracts in `../../contracts/collaboration.md` and `../../contracts/context-loading.md`, plus the consuming project's adapter.
 
 ## Goal

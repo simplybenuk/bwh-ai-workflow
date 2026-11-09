@@ -5,6 +5,8 @@ description: Review what a proposed or implemented code change could break beyon
 
 # Review blast radius
 
+Apply [model routing](../../contracts/model-routing.md) for task delegation and model selection.
+
 Remain read-only unless the user separately authorizes a test or helper artifact. Read-only inspection and existing validation commands are allowed. Do not commit, push, publish, or modify external systems.
 
 ## Trace the change

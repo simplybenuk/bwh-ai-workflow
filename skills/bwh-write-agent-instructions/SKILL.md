@@ -5,6 +5,8 @@ description: Design, revise, or audit instructions whose primary reader is an ag
 
 # Write agent instructions
 
+Apply [model routing](../../contracts/model-routing.md) for task delegation and model selection.
+
 Design agent-facing documents around observable behavior. Keep host discovery, installation paths, invocation syntax, and model selection in routed host references rather than portable instructions.
 
 Apply `../../contracts/context-loading.md`, `../../contracts/autonomy.md`, and the consuming project's adapter when present.

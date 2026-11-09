@@ -5,7 +5,7 @@ description: Archive an accepted delivered change and its evidence-linked tempor
 
 # Archive change
 
-Apply the shared contracts in `../../contracts/autonomy.md`, `../../contracts/collaboration.md`, `../../contracts/completion.md`, `../../contracts/context-loading.md`, `../../contracts/handoff.md`, `../../contracts/model-routing.md`, and `../../contracts/states.md`, plus the consuming project's adapter.
+Apply the shared contracts in `../../contracts/autonomy.md`, `../../contracts/collaboration.md`, `../../contracts/completion.md`, `../../contracts/context-loading.md`, `../../contracts/handoff.md`, [model routing](../../contracts/model-routing.md), and `../../contracts/states.md`, plus the consuming project's adapter.
 
 ## Goal
 

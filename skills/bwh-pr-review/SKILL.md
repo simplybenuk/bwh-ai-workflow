@@ -5,6 +5,8 @@ description: Independently review a complete pull request or branch before merge
 
 # Pull request review
 
+Apply [model routing](../../contracts/model-routing.md) for task delegation and model selection.
+
 Apply `../../contracts/autonomy.md`, `../../contracts/collaboration.md`, `../../contracts/context-loading.md` and
 `../../contracts/review.md`, plus the consuming project's adapter when present.
 Resolve project instructions through `../../contracts/host-conventions.md`.

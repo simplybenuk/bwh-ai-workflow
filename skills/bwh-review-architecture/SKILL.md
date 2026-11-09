@@ -5,6 +5,8 @@ description: Review a bounded subsystem for evidence-backed architecture improve
 
 # Review architecture
 
+Apply [model routing](../../contracts/model-routing.md) for task delegation and model selection.
+
 Survey structure to find costly seams worth exploring. This is a read-only review apart from a requested report. It does not approve a refactor or design its interface.
 
 Apply `../../contracts/context-loading.md`, `../../contracts/autonomy.md`, and the consuming project's adapter when present.

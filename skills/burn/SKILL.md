@@ -5,6 +5,8 @@ description: Use only when the user explicitly asks to spend soon-expiring usage
 
 # Burn expiring usage
 
+Apply [model routing](../../contracts/model-routing.md) for task delegation and model selection.
+
 Apply the shared contracts in `../../contracts/autonomy.md`, `../../contracts/collaboration.md`, `../../contracts/completion.md`, `../../contracts/context-loading.md`, and `../../contracts/handoff.md`, plus the current project's instructions and adapter when present.
 
 ## Goal

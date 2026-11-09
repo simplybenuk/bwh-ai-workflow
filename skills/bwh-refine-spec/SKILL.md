@@ -5,7 +5,7 @@ description: Iteratively refine a draft specification and its development-readin
 
 # Refine spec
 
-Apply the shared contracts in `../../contracts/autonomy.md`, `../../contracts/collaboration.md`, `../../contracts/completion.md`, `../../contracts/context-loading.md`, `../../contracts/handoff.md`, `../../contracts/model-routing.md`, and `../../contracts/states.md`.
+Apply the shared contracts in `../../contracts/autonomy.md`, `../../contracts/collaboration.md`, `../../contracts/completion.md`, `../../contracts/context-loading.md`, `../../contracts/handoff.md`, [model routing](../../contracts/model-routing.md), and `../../contracts/states.md`.
 
 ## Goal
 

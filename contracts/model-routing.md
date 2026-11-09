@@ -1,9 +1,7 @@
-# Model Routing Contract
+# Model routing contract
 
-Keep skills and project artifacts model-agnostic. Model choice is an execution concern.
+Model choice is an execution concern. Keep task deliverables model-agnostic unless model selection is itself the requested subject.
 
-- Preserve the current reasoning effort as the baseline during a model migration.
-- Compare the baseline with one lower effort on representative cases before increasing effort.
-- Escalate based on ambiguity, trust-boundary risk, migration, security, rollout, recovery, or repeated validation failure—not task size alone.
-- Record model, reasoning effort, latency, token usage, tool calls, retries, and outcome for eval runs.
-- Keep workflow guardrails and validation requirements unchanged when the model changes.
+For every task using toolkit skills, apply [bwh-model-selector](../skills/bwh-model-selector/SKILL.md) before delegating or deciding to work locally. It owns model ceilings, effort selection, freshness checks, escalation permission, and delegation quality. Load its routed model guide for family rankings and host controls. Follow project instructions and runtime tool restrictions.
+
+Keep workflow guardrails and validation requirements unchanged when models change. During a model migration, preserve current effort as the initial baseline and compare it with one lower supported setting on representative cases before increasing effort. For eval runs, record available model, effort, latency, token usage, tool calls, retries, and outcome.

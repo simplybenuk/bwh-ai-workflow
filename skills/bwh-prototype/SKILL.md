@@ -5,6 +5,8 @@ description: Build an isolated throwaway prototype to answer one product or engi
 
 # Prototype
 
+Apply [model routing](../../contracts/model-routing.md) for task delegation and model selection.
+
 Build the smallest runnable artifact that answers one named decision question. Treat its code as evidence, not approved implementation.
 
 Apply `../../contracts/autonomy.md`, `../../contracts/context-loading.md`, and the consuming project's adapter when present.

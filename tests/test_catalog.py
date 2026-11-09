@@ -31,6 +31,18 @@ class CatalogTests(unittest.TestCase):
         self.assertIn("burn", self.catalog["profiles"]["full"])
         self.assertNotIn("burn", self.catalog["profiles"]["workflow"])
 
+    def test_model_selector_is_resolved_for_every_profile(self) -> None:
+        from install import resolve_skills
+
+        for profile in self.catalog["profiles"]:
+            with self.subTest(profile=profile):
+                resolved = resolve_skills(self.catalog, profile)
+                self.assertEqual(resolved[0], "bwh-model-selector")
+                self.assertEqual(resolved.count("bwh-model-selector"), 1)
+        for skill in self.catalog["skills"]:
+            if skill["name"] != "bwh-model-selector":
+                self.assertIn("bwh-model-selector", skill["dependencies"])
+
     def test_non_object_catalog_and_skill_entries_are_rejected(self) -> None:
         self.assertIn("catalog root must be an object", validate_catalog([], ROOT))
         errors = self.errors(lambda value: value["skills"].append("not-an-object"))

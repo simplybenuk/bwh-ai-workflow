@@ -5,6 +5,8 @@ description: Diagnose hard bugs and performance regressions through a repeatable
 
 # Diagnose bugs
 
+Apply [model routing](../../contracts/model-routing.md) for task delegation and model selection.
+
 Find the cause through a signal that can distinguish the reported failure from success. Match the loop to the cheapest credible reproduction. A browser or integration path is valid when no smaller path represents the failure.
 
 ## Protect evidence

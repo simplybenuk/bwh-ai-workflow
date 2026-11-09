@@ -5,6 +5,8 @@ description: Create a project-local verify-<app> skill that launches, checks, dr
 
 # Create project verification
 
+Apply [model routing](../../contracts/model-routing.md) for task delegation and model selection.
+
 Create instructions that another agent can follow without prior knowledge of the project. Read the project's agent instructions and [`../../contracts/host-conventions.md`](../../contracts/host-conventions.md), then resolve the project-local skill directory for the target host. Do not hard-code a host directory in this portable skill.
 
 Writing the generated skill and any helper files requires the user's authorization to change the project. Do not change production systems, external data, or shared user sessions. Ask for a documented disposable environment or dry-run mode when verification would otherwise mutate them.
