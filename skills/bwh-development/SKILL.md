@@ -7,6 +7,8 @@ description: Implement authorised scoped requests or approved planned tasks with
 
 Apply the shared contracts in `../../contracts/autonomy.md`, `../../contracts/collaboration.md`, `../../contracts/completion.md`, `../../contracts/context-loading.md`, `../../contracts/handoff.md`, [model routing](../../contracts/model-routing.md), and `../../contracts/states.md`, plus the consuming project's adapter.
 
+This codebase is yours: what it's for and how it's built are your call, and you'll keep building on it.
+
 ## Goal
 
 Complete the requested change while preserving project scope, security, source-of-truth rules, and any approved specification that governs the work.

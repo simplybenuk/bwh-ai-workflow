@@ -3,7 +3,7 @@
   "toolkit": {
     "identifier": "bwh-ai-workflow",
     "display_name": "BWH Agent Toolkit",
-    "version": "0.4.0"
+    "version": "0.4.1"
   },
   "hosts": {
     "codex": {"validation_status": "pending"},
