@@ -6,7 +6,7 @@ The public name is `BWH Agent Toolkit`. The repository, marketplace, and package
 
 ## What is included
 
-The toolkit has 21 active skills split into profiles.
+The toolkit has 30 active skills split into profiles.
 
 `bwh-model-selector` is included in every profile. It delegates useful work to strictly lower model tiers, checks results, asks before higher-tier or incomparable model choices, and warns when its dated guidance is at least 60 days old. Every toolkit skill routes through this policy. Standalone tasks can use it directly; installation alone does not activate it for unrelated work outside toolkit skills.
 
@@ -30,16 +30,33 @@ The toolkit has 21 active skills split into profiles.
 - `bwh-create-verification` creates a reusable verification skill and fixture.
 - `bwh-review-architecture` reports observed architectural costs and options.
 - `bwh-prototype` builds disposable evidence for an uncertain idea.
+- `bwh-ux-polish` improves UI/UX through scored design reviews and implementation rounds, stopping for human direction after each round.
+- `bwh-web-performance` improves loading and interaction performance using comparable measurements and traces.
+- `bwh-database-performance` improves query and workload performance while checking correctness and resource trade-offs.
+- `bwh-accessibility` improves accessible journeys using automated findings and exercised interaction evidence.
+- `bwh-reliability` improves failure handling and recovery using isolated fault scenarios.
+- `bwh-developer-experience` improves setup, build, test, and debugging workflows through repeatable task trials.
+- `bwh-api-usability` improves consumer tasks and API consistency while preserving compatibility.
+- `bwh-maintainability` improves bounded change tasks using evidence of change locality and comprehension costs.
 - `burn` turns expiring usage into useful project improvements, with weekly and rolling five-hour stop rules.
 
 ### Authoring
 
 - `bwh-technical-writing` writes or edits evidence-backed technical prose.
+- `bwh-documentation-usability` improves reader task success through clean-room trials and human-steered rounds.
 - `bwh-grill` runs an exhaustive, evidence-first questioning session when requested.
 - `bwh-write-agent-instructions` creates clear instructions for agent readers.
 - `bwh-skills-audit` reviews a skill collection and recommends what to keep, change, add, or retire.
 
 The `full` profile contains every skill. Project installs default to `workflow`. Machine-level plugin installs expose the full collection.
+
+## Improvement rounds
+
+The UI/UX polish skill and eight domain improvement skills use the same human-steered cadence. Round 1 assesses the baseline, suggests changes, makes one improvement pass, and reassesses with new suggestions. Each later round implements the human's steering, reassesses, and suggests again. Every round stops for human input. On invocation, the agent resolves the target and asks for the number of reviewers and their agents/models unless already supplied.
+
+The domain skills follow [the improvement-rounds contract](contracts/improvement-rounds.md). Reports separate measurements in native units, target/budget results, and individual reviewer judgments. Performance work reports timings and variation; accessibility and reliability work reports exercised scenarios and coverage; usability and maintainability work treats counts and timings as evidence with explicit limits. None converts those indicators into an invented objective quality score. Comparable fixtures, raw evidence, correctness checks, and disclosure of inconclusive results matter more than raising a score.
+
+These skills apply when iterative improvement is requested. Ordinary fixes, read-only audits, documentation edits, and architecture surveys keep their existing workflows. Publication still requires its own authority.
 
 ## Default delivery
 

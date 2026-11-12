@@ -3,7 +3,7 @@
   "toolkit": {
     "identifier": "bwh-ai-workflow",
     "display_name": "BWH Agent Toolkit",
-    "version": "0.4.1"
+    "version": "0.5.0"
   },
   "hosts": {
     "codex": {"validation_status": "pending"},
@@ -31,11 +31,20 @@
       "bwh-create-verification",
       "bwh-review-architecture",
       "bwh-prototype",
+      "bwh-ux-polish",
+      "bwh-web-performance",
+      "bwh-database-performance",
+      "bwh-accessibility",
+      "bwh-reliability",
+      "bwh-developer-experience",
+      "bwh-api-usability",
+      "bwh-maintainability",
       "burn"
     ],
     "authoring": [
       "bwh-model-selector",
       "bwh-technical-writing",
+      "bwh-documentation-usability",
       "bwh-grill",
       "bwh-write-agent-instructions",
       "bwh-skills-audit"
@@ -57,8 +66,17 @@
       "bwh-create-verification",
       "bwh-review-architecture",
       "bwh-prototype",
+      "bwh-ux-polish",
+      "bwh-web-performance",
+      "bwh-database-performance",
+      "bwh-accessibility",
+      "bwh-reliability",
+      "bwh-developer-experience",
+      "bwh-api-usability",
+      "bwh-maintainability",
       "burn",
       "bwh-technical-writing",
+      "bwh-documentation-usability",
       "bwh-grill",
       "bwh-write-agent-instructions",
       "bwh-skills-audit"
@@ -96,6 +114,15 @@
       "name": "bwh-prototype", "directory": "skills/bwh-prototype", "status": "active", "profiles": ["engineering"], "dependencies": ["bwh-model-selector"], "shared_contracts": true, "origin": "derived",
       "provenance": {"repository": "https://github.com/mattpocock/skills", "revision": "885e2ca4d842d139e9aef4e48d366c63cb1b8013", "license": "MIT", "attribution": "Matt Pocock and contributors", "paths": ["skills/engineering/prototype/SKILL.md", "skills/engineering/prototype/LOGIC.md", "skills/engineering/prototype/UI.md"], "adaptations": ["Defaults to isolated temporary storage and disposable dependencies.", "Treats prototype code as evidence and requires separate authority for promotion or publication."]}
     },
+    {"name": "bwh-ux-polish", "directory": "skills/bwh-ux-polish", "status": "active", "profiles": ["engineering"], "dependencies": ["bwh-model-selector"], "shared_contracts": true, "origin": "core"},
+    {"name": "bwh-web-performance", "directory": "skills/bwh-web-performance", "status": "active", "profiles": ["engineering"], "dependencies": ["bwh-model-selector"], "shared_contracts": true, "origin": "core"},
+    {"name": "bwh-database-performance", "directory": "skills/bwh-database-performance", "status": "active", "profiles": ["engineering"], "dependencies": ["bwh-model-selector"], "shared_contracts": true, "origin": "core"},
+    {"name": "bwh-accessibility", "directory": "skills/bwh-accessibility", "status": "active", "profiles": ["engineering"], "dependencies": ["bwh-model-selector"], "shared_contracts": true, "origin": "core"},
+    {"name": "bwh-reliability", "directory": "skills/bwh-reliability", "status": "active", "profiles": ["engineering"], "dependencies": ["bwh-model-selector"], "shared_contracts": true, "origin": "core"},
+    {"name": "bwh-developer-experience", "directory": "skills/bwh-developer-experience", "status": "active", "profiles": ["engineering"], "dependencies": ["bwh-model-selector"], "shared_contracts": true, "origin": "core"},
+    {"name": "bwh-api-usability", "directory": "skills/bwh-api-usability", "status": "active", "profiles": ["engineering"], "dependencies": ["bwh-model-selector"], "shared_contracts": true, "origin": "core"},
+    {"name": "bwh-maintainability", "directory": "skills/bwh-maintainability", "status": "active", "profiles": ["engineering"], "dependencies": ["bwh-model-selector"], "shared_contracts": true, "origin": "core"},
+    {"name": "bwh-documentation-usability", "directory": "skills/bwh-documentation-usability", "status": "active", "profiles": ["authoring"], "dependencies": ["bwh-model-selector"], "shared_contracts": true, "origin": "core"},
     {"name": "burn", "directory": "skills/burn", "status": "active", "profiles": ["engineering"], "dependencies": ["bwh-model-selector"], "shared_contracts": true, "origin": "core"},
     {
       "name": "bwh-technical-writing", "directory": "skills/bwh-technical-writing", "status": "active", "profiles": ["authoring"], "dependencies": ["bwh-model-selector"], "shared_contracts": true, "origin": "derived",
